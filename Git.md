@@ -59,3 +59,9 @@ collaborate (see also: git help workflows)
 `git config --global core.autocrlf input` - line end setting(Unix/Mac)<br/>
 `git config --global core.autocrlf true` - line end setting(Windows)<br/>
 `git config --global core.safecrlf warn` - line end setting<br/>
+<br/>
+
+## Useful links
+[Git How To](https://githowto.com/ru)<br/>
+[LearnGitBranching](https://learngitbranching.js.org/)<br/>
+[HABR about REBASE](https://habr.com/ru/articles/161009/)<br/>
