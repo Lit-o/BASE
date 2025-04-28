@@ -1,7 +1,5 @@
-# Git 
-<br/>
-<br/>
-## Git --help <br/>
+# Git<br/>
+## Git \--help  
 ```
 usage: 
 git [-v | --version] [-h | --help] [-C <path>] [-c<name>=<value>]
@@ -47,4 +45,4 @@ collaborate (see also: git help workflows)
 ```
 <br/>
 <br/>
-## Git config <br/>
+## Git config<br/>
