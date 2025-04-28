@@ -1,4 +1,6 @@
 # Git<br/>
+<br/>
+
 ## Git \--help  
 ```
 usage: 
@@ -47,12 +49,13 @@ collaborate (see also: git help workflows)
 <br/>
 
 ## Git config<br/>
-`git config --list` - info about user
-`git config --global user.name "Global Name"` - set Name Globally 
-`git config --local user.name "Global Name"` - set Name Locally
-`git config --global user.email "email"` - set Email Globally
-`git config --global init.defaultBranch main` - rename master default branch name to main
+`git config --list` - info about user<br/>
+`git config --global user.name "Global Name"` - set Name Globally<br/> 
+`git config --local user.name "Global Name"` - set Name Locally<br/>
+`git config --global user.email "email"` - set Email Globally<br/>
+`git config --global init.defaultBranch main` - rename master default branch name to main<br/>
+<br/>
 
-`git config --global core.autocrlf input` - line end setting(Unix/Mac)
-`git config --global core.autocrlf true` - line end setting(Windows)
-`git config --global core.safecrlf warn` - line end setting
+`git config --global core.autocrlf input` - line end setting(Unix/Mac)<br/>
+`git config --global core.autocrlf true` - line end setting(Windows)<br/>
+`git config --global core.safecrlf warn` - line end setting<br/>
