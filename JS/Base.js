@@ -26,6 +26,13 @@ const NeoString = 'Wake up, Neo...'
 console.log((NeoString.length))
 console.log((NeoString.toUpperCase()))
 
+const Str1 = '1234'
+console.log(typeof(+Str1))
+console.log(Number(Str1))
+console.log(String(+Str1))
+console.log(Boolean(Str1))
+
+
 
 // TYPES (Primitive values(without mutable Array, Object,(function?))) 
 // Type | typeof return value | Object wrapper
@@ -56,7 +63,7 @@ console.log((NeoString.toUpperCase()))
 // Boolean values are usually used for conditional operations, 
 // including ternary operators, if...else, while, etc.
 
-// NaN ("Not a Number") is a special kind of number value 
+// NaN ("Not a Number") is a special kind of number value (isNaN(theNumber))
 // that's typically encountered when the result of an
 //  arithmetic operation cannot be expressed as a number. 
 // It is also the only value in JavaScript that is not equal to itself
