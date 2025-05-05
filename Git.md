@@ -71,9 +71,14 @@ my custom tips, not from Git --help
 <br/>
 
 ## Git start<br/>
-   `git init` - Create an empty Git repository or reinitialize an existing one<br/> 
-   `git clone` - Clone a repository into a new directory<br/> 
+`git init` - Create an empty Git repository or reinitialize an existing one<br/> 
+`git clone` - Clone a repository into a new directory<br/> 
 
+
+## Last commit change<br/>
+`git commit --amend` - Last local commit change without making new commit<br/>
+[ --no-edit] - option for current comment name stay as it was (when only add forgotten file needed)<br/>
+under hood git run `git reset`
 
 
 
