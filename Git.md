@@ -44,7 +44,11 @@ collaborate (see also: git help workflows)
    fetch     Download objects and refs from another repository
    pull      Fetch from and integrate with another repository or a local branch
    push      Update remote refs along with associated objects
-```
+``` 
+<br/>
+
+`git help push` - detailed info about `push` command
+
 <br/>
 <br/>
 
