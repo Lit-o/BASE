@@ -89,3 +89,4 @@ under hood git run `git reset`
 [LearnGitBranching](https://learngitbranching.js.org/)<br/>
 [HABR about REBASE](https://habr.com/ru/articles/161009/)<br/>
 [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)<br/>
+[Работаем с Git: первые шаги в GitHub](https://habr.com/ru/companies/yandex_praktikum/articles/700708/)<br/>
