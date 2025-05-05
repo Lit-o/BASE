@@ -66,9 +66,21 @@ my custom tips, not from Git --help
 `git config --global core.autocrlf input` - line end setting(Unix/Mac)<br/>
 `git config --global core.autocrlf true` - line end setting(Windows)<br/>
 `git config --global core.safecrlf warn` - line end setting<br/>
+
 <br/>
+<br/>
+
+## Git start<br/>
+   `git init` - Create an empty Git repository or reinitialize an existing one<br/> 
+   `git clone` - Clone a repository into a new directory<br/> 
+
+
+
+
+
 
 ## Useful links
 [Git How To](https://githowto.com/ru)<br/>
 [LearnGitBranching](https://learngitbranching.js.org/)<br/>
 [HABR about REBASE](https://habr.com/ru/articles/161009/)<br/>
+[Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)<br/>
