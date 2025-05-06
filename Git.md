@@ -92,3 +92,4 @@ under hood git run `git reset`
 [Работаем с Git 1: первые шаги в GitHub](https://habr.com/ru/companies/yandex_praktikum/articles/700708/)<br/>
 [Работаем с Git 2: трудовые будни](https://habr.com/ru/companies/yandex_praktikum/articles/728302/)
 [Git. Руководство по оформлению веток и коммитов](https://habr.com/ru/articles/820547/)
+[30 команд Git](https://habr.com/ru/companies/ruvds/articles/599929/)
