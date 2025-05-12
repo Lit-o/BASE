@@ -101,3 +101,16 @@ const landscape = function() {
     return result;
   };
   console.log(landscape());
+
+// ! TIP
+// Func Declaration ONLY into Global Scope, or other Function Scope
+// Func Declaration NOT allowed into if(){} or for/while(){}
+function example() {
+    function a() {} // Fine
+        if (something) {
+            function b() {} //WRONG!
+        }
+        while (something) {
+            function b() {} //WRONG!
+        }
+}
