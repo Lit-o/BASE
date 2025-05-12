@@ -114,3 +114,20 @@ function example() {
             function b() {} //WRONG!
         }
 }
+
+
+// ! TIP CLOSURE
+function multiplier(factor) {
+    return function(number) {
+      return number * factor;
+    };
+  }
+  
+  var twice = multiplier(2);
+  console.log(twice(5));
+  // → 10
+
+// Freeze UpLvlAbstraction context data for able to reference a specific instance
+// I know 2 React common cases:
+// 1) Custom hooks;
+// 2) JSX ---> <Button onPress={()=>{ doSomethingInCustomSecondPlace(2) }} ...
