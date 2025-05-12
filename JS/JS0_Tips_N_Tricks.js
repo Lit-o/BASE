@@ -55,6 +55,7 @@ for (let i = 1; i <= 100; i++) {
     }
 }
 
+
 const ChessFieldVer1 = (size = 8) => {
     let lineArr = []
 
@@ -77,3 +78,26 @@ const ChessFieldVer1 = (size = 8) => {
     console.log(lineArr.join(''))
 }
 ChessFieldVer1(12)
+
+
+const landscape = function() {
+    let result = "";
+    const flat = function(size) {
+      for (let count = 0; count < size; count++)
+        result += "_";
+    };
+    const mountain = function(size) {
+      result += "/";
+      for (let count = 0; count < size; count++)
+        result += "'";
+      result += "\\";
+    };
+  
+    flat(3);
+    mountain(4);
+    flat(6);
+    mountain(1);
+    flat(1);
+    return result;
+  };
+  console.log(landscape());
