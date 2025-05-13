@@ -149,3 +149,5 @@ function recursionPower(base, exponent) {
 
 // JS recursion implementations, it’s about ten times 
 // slower than the looping(for)
+// Often Recursion needed when we have task that require exploring 
+// or processing several branches, each of which can have more branches
