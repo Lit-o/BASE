@@ -102,6 +102,7 @@ const landscape = function() {
   };
   console.log(landscape());
 
+
 // ! TIP
 // Func Declaration ONLY into Global Scope, or other Function Scope
 // Func Declaration NOT allowed into if(){} or for/while(){}
@@ -134,3 +135,17 @@ function multiplier(factor) {
 // from LIBS with some current Project Hugh Level Data, and after that 
 // we can use prepared libs stuff in other target down-level places with local arguments
 // 2) JSX ---> <Button onPress={()=>{ doSomethingInCustomSecondPlace(2) }} ...
+
+
+// ! TIP RECURSION
+function recursionPower(base, exponent) {
+    if (exponent == 0)
+      return 1;
+    else
+      return base * recursionPower(base, exponent - 1);
+  }
+  
+  console.log(recursionPower(2, 5));
+
+// JS recursion implementations, it’s about ten times 
+// slower than the looping(for)
