@@ -151,3 +151,11 @@ function recursionPower(base, exponent) {
 // slower than the looping(for)
 // Often Recursion needed when we have task that require exploring 
 // or processing several branches, each of which can have more branches
+
+console.log(Math.ceil(62.1))
+console.log(Math.floor(62.9999))
+
+console.log(Math.floor(Math.random() * 100 + 1))
+//chance 1 to 100
+console.log(Math.floor(Math.random() * 2 + 1))
+//chance 1 to 2
