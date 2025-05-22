@@ -158,6 +158,9 @@ console.log(Math.floor(62.9999))
 console.log(Math.floor(Math.random() * 100 + 1))
 //chance 1 to 100
 console.log(Math.floor(Math.random() * 2 + 1))
+
+console.log(Math.ceil(Math.random() * 4)) 
+console.log(Math.ceil(Math.random() * 100))
 //chance 1 to 2
 
 // My Recursion example
