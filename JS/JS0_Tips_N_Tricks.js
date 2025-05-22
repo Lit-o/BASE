@@ -159,3 +159,20 @@ console.log(Math.floor(Math.random() * 100 + 1))
 //chance 1 to 100
 console.log(Math.floor(Math.random() * 2 + 1))
 //chance 1 to 2
+
+// My Recursion example
+let whatIHave = 4
+
+const giveMeMore = (goal) => {
+    if (whatIHave >= goal) {
+        console.log('Now i Have what i want!')
+        return whatIHave
+    } else {
+        console.log('recursion tick') 
+        whatIHave++
+        giveMeMore(goal)
+    }
+}
+
+giveMeMore(15)
+console.log('What i have now is -',whatIHave )
