@@ -179,3 +179,23 @@ const giveMeMore = (goal) => {
 
 giveMeMore(15)
 console.log('What i have now is -',whatIHave )
+
+
+// Sum range
+console.log(sum(range(1, 10)));
+
+function range (start, end) {
+    const biggest = start < end ? end : start
+    const smallest = start > end ? end : start
+    let array = []
+    
+    for (let i = smallest; i <= biggest; i++) {
+        array.push(i)
+    }
+    
+    return array
+}
+
+function sum (array) {
+    return array.reduce((a,b) => a + b)
+}
