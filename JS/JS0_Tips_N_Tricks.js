@@ -217,3 +217,22 @@ ClosureCounter1.increment()
 ClosureCounter1.increment()
 console.log(ClosureCounter1.getCount())
 console.log(ClosureCounter2.getCount())
+
+
+// Validation for input user Name with RegExp
+const regexValidationFindExceptions = /[^a-zA-Z0-9\s]/
+
+function validator(e) {
+    const exceptionsMatches = regexValidationFindExceptions.exec(e); // either an array or null
+    const isExceptions = Boolean(exceptionsMatches);
+
+    if (!isExceptions) {
+        console.log('go')
+    }  else {
+        console.log('stop')
+    }
+}
+
+validator('fdf55^%#')
+validator('fdf5')
+validator('fdf5 fdf')
