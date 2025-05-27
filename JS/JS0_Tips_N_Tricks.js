@@ -199,3 +199,21 @@ function range (start, end) {
 function sum (array) {
     return array.reduce((a,b) => a + b)
 }
+
+
+// Closure for incapsulation (Caps first letter because function like OOP class)
+function Counter() {
+    let count = 0
+    return {
+        increment() { count++ },
+        getCount() { return count}
+    }
+}
+
+const ClosureCounter1 = Counter()
+const ClosureCounter2 = Counter()
+
+ClosureCounter1.increment()
+ClosureCounter1.increment()
+console.log(ClosureCounter1.getCount())
+console.log(ClosureCounter2.getCount())
