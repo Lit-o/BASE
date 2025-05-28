@@ -18,6 +18,8 @@ console.log(obj.Viva)
 console.log(obj['La Vida'])
 console.log(obj[l + v])
 
+let a = 'a'
+`interpolation is ${a} dynamic string` // Template literals or Template strings
 
 
 const NeoString = 'Wake up, Neo...'
