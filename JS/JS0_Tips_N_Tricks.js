@@ -8,6 +8,17 @@
 
     console.log(two) // cant see const two becouse scope out of block 
 
+const obj = {
+    Viva: 10,
+    'La Vida': 20,
+}
+let l='La ',v='Vida'
+
+console.log(obj.Viva)
+console.log(obj['La Vida'])
+console.log(obj[l + v])
+
+
 
 const NeoString = 'Wake up, Neo...'
 console.log(
