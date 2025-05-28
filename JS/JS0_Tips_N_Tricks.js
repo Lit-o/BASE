@@ -22,6 +22,21 @@ let a = 'a'
 `interpolation is ${a} dynamic string` // Template literals or Template strings
 
 
+let incr = 5
+let decr = 5
+console.log(incr++)
+console.log(decr--)
+console.log(++incr)
+console.log(--incr)
+
+let a1 = 5
+a1 *= 2
+a1 += 1
+a1 -= 2
+a1 /= 4
+console.log(a1)
+
+
 const NeoString = 'Wake up, Neo...'
 console.log(
     (NeoString.length)
