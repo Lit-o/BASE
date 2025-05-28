@@ -51,6 +51,31 @@ let scC = 'check fine' &&
 && true && 'Action that we needed after all success checks'
 
 
+// loop mark
+first: for (let i = 0; i < 7; i++) {
+            console.log('i -', i)
+            for (let j = 0; j < 5; j++) {
+                console.log('j -', j)
+                for (let k = 0; k < 5; k++) {
+                    console.log('k -', k)
+                    if (k === 3) continue first
+                }
+            }
+}
+
+first: for (let i = 0; i < 4; i++) {
+    console.log('i -', i)
+    second: for (let j = 0; j < 3; j++) {
+        console.log('j -', j)
+        for (let k = 0; k < 5; k++) {
+            console.log('k -', k)
+            if (k === 1) continue second
+            if (k === 2) break first
+        }
+    }
+}
+
+
 const NeoString = 'Wake up, Neo...'
 console.log(
     (NeoString.length)
