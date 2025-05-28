@@ -1,3 +1,14 @@
+{
+    let one = 1
+    const two = 'two' 
+    console.log(one)
+}
+    console.log(three) // three hosting and exist but undefined
+    var three = ['3']
+
+    console.log(two) // cant see const two becouse scope out of block 
+
+
 const NeoString = 'Wake up, Neo...'
 console.log(
     (NeoString.length)
