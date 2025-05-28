@@ -38,6 +38,19 @@ a1 %= 2
 console.log(a1)
 
 
+// Short-Circuiting
+let sc1 = true || 'heavy function that even doesn\'t started'
+console.log(sc1)
+let sc2 = false && 'heavy function that even doesn\'t started'
+console.log(sc2)
+
+let scD = false || 'Default settings'
+
+let scC = 'check fine' && 
+'condition - true' 
+&& true && 'Action that we needed after all success checks'
+
+
 const NeoString = 'Wake up, Neo...'
 console.log(
     (NeoString.length)
