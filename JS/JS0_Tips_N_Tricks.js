@@ -196,6 +196,14 @@ function example() {
 
 
 // ! TIP CLOSURE
+// CLOSURE purpose - Freeze UpLvlAbstraction (calculated on fly) data 
+// for able to LowLvlAbstraction instance with its specific data
+// React case:
+// Custom hooks, for example:
+// On High Abstraction level We activate and prepare some object 
+// from LIBS with some current Project Hugh Level Data, and after that 
+// we can use prepared libs stuff in other target down-level places with local arguments
+
 function multiplier(factor) {
     return function(number) {
       return number * factor;
@@ -205,14 +213,6 @@ function multiplier(factor) {
   var twice = multiplier(2);
   console.log(twice(5));
   // → 10
-
-// Freeze UpLvlAbstraction context data for able to reference a specific instance
-// I know 2 React common cases:
-// 1) Custom hooks, for example:
-// On High Abstraction level We activate and prepare some object 
-// from LIBS with some current Project Hugh Level Data, and after that 
-// we can use prepared libs stuff in other target down-level places with local arguments
-// 2) JSX ---> <Button onPress={()=>{ doSomethingInCustomSecondPlace(2) }} ...
 
 
 // ! TIP RECURSION
