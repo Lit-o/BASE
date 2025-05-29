@@ -140,6 +140,10 @@ let strNumber = 123
 strNumber += ''
 console.log(typeof(strNumber))
 
+let trimedText = '   Wake .  '
+console.log(trimedText)
+console.log(trimedText.trim())
+
 
 // Number tips
 const num = 15.25
