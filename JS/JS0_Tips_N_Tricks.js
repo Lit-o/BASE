@@ -100,7 +100,10 @@ const arrowTrick2 = a => a * 5
 const arrowTrick3 = a => ({wake: 'up' + a})
 console.log(typeof(arrowTrick3(' Neo...')))
 
-
+// Console.log('some') - is function. 
+// function on js ALLWAYS return something, at least undefined
+// so console.log('some') make side effect - 'some' on terminal and 
+// return undefined too
 
 const NeoString = 'Wake up, Neo...'
 console.log(
