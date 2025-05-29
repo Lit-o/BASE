@@ -105,13 +105,42 @@ console.log(typeof(arrowTrick3(' Neo...')))
 // so console.log('some') make side effect - 'some' on terminal and 
 // return undefined too
 
-const NeoString = 'Wake up, Neo...'
-console.log(
-    (NeoString.length)
-)
-console.log(
-    NeoString.toUpperCase()
-)
+// Don't brack line after return, at least add ( )
+const returnBLTip = () => {
+    return (
+        5 + 5
+    )
+}
+
+
+//String Tips
+let str1 = 'Wake up, Neo...'
+console.log(str1.length)
+
+// toUpperCase return new string. str1 still the same
+let str2 = str1.toUpperCase()
+let str3 = str1.toLowerCase()
+
+console.log(str3.indexOf('neo'))
+console.log(str3[5])
+
+//Slice. First param in, last param out
+console.log(str3.slice(5))
+console.log(str3.slice(5, 10))
+console.log(str3.slice(-5, -2))
+
+// number to string
+let strNumber = 123
+strNumber += ''
+console.log(typeof(strNumber))
+
+
+
+
+
+
+
+
 
 const Str1 = '1234'
 console.log(
