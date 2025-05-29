@@ -1,3 +1,6 @@
+// A New standardized version of JS - ES6 2015 
+// (let const, ... , arrow func, and other stuff)
+
 {
     let one = 1
     const two = 'two' 
@@ -75,6 +78,20 @@ first: for (let i = 0; i < 4; i++) {
     }
 }
 
+//Function Declaration (Hosting)
+function wakeUp1 () {
+    return 'Neo...'
+}
+
+// Function Expression  ; - needed
+const wakeUp2 = function () {
+    return 'Neo...'
+}
+
+// Function Arrow (don't have this, have many tricks)
+const wakeUp3 = () => {
+
+}
 
 const NeoString = 'Wake up, Neo...'
 console.log(
