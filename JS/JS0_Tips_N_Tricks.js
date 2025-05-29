@@ -92,6 +92,15 @@ const wakeUp2 = function () {
 const wakeUp3 = () => {
 
 }
+// one line function body doesn't need block { }
+const arrowTrick1 = (a, b) => a * b
+const arrowTrick2 = a => a * 5
+
+// quick return obj need ( )
+const arrowTrick3 = a => ({wake: 'up' + a})
+console.log(typeof(arrowTrick3(' Neo...')))
+
+
 
 const NeoString = 'Wake up, Neo...'
 console.log(
