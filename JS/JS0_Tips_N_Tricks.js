@@ -105,13 +105,19 @@ console.log(typeof(arrowTrick3(' Neo...')))
 // so console.log('some') make side effect - 'some' on terminal and 
 // return undefined too
 
-// Don't brack line after return, at least add ( )
-const returnBLTip = () => {
+// Don't break line after return, at least add ( )
+const returnBLTip = (n = 0) => {
     return (
-        5 + 5
+        5 + 5 + n
     )
 }
 
+// function call return something 
+// and this specific instance call result we can linked to variable
+const ten = returnBLTip()
+const eleven = returnBLTip(1)
+console.log(ten)
+console.log(eleven)
 
 //String Tips
 let str1 = 'Wake up, Neo...'
