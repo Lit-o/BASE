@@ -135,7 +135,17 @@ strNumber += ''
 console.log(typeof(strNumber))
 
 
+// Number tips
+const num = 15.25
 
+console.log(Math.round(num))
+console.log(Math.floor(num))
+console.log(Math.ceil(num))
+
+const numString = '15.55px'
+console.log(parseInt(numString))
+console.log(parseFloat(numString))
+console.log(typeof(parseFloat(numString)))
 
 
 
