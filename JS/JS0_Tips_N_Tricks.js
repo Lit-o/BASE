@@ -54,6 +54,10 @@ let scC = 'check fine' &&
 && true && 'Action that we needed after all success checks'
 
 
+
+
+
+// LOOPS & CONDITIONS LOOPS & CONDITIONS LOOPS & CONDITIONS LOOPS & CONDITIONS
 // loop mark
 first: for (let i = 0; i < 7; i++) {
             console.log('i -', i)
@@ -77,6 +81,50 @@ first: for (let i = 0; i < 4; i++) {
         }
     }
 }
+
+
+let do1while = 0
+//at least do once
+do {
+    do1while++
+    console.log(do1while)
+} while (do1while < 10)
+
+
+let ifTip = 12
+if (ifTip < 5) {
+    console.log('ifTip < 5')
+} else if (ifTip > 5 && ifTip < 10) {
+    console.log('ifTip > 5 && ifTip < 10')
+} else (
+    console.log('ifTip >= 10')
+)
+
+
+let switchResult = (switchTip) => {
+    switch (switchTip) {
+        case 12:
+            console.log('match 12')
+            return 'twelve'
+
+        case 14:
+            console.log('match 14')
+            // break return undefined
+            break
+            // return 'fourteen'
+
+        case 15:
+        case 16:
+            return ('15 or 16')
+
+        default:
+            console.log('match not found')
+            return 'not found'
+    } 
+}
+console.log(switchResult(15))
+
+
 
 
 
