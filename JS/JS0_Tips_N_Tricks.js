@@ -249,6 +249,51 @@ console.log(typeof(qNumNum))
 
 
 
+// OBJECTS OBJECTS OBJECTS OBJECTS OBJECTS OBJECTS OBJECTS
+const objTip = {
+    a: 5,
+    b: 15,
+    c: {
+        wake: 'Up',
+        Neo: '...'
+    },
+    d: [11,22,33],
+    delProperty: 'unnecessary data',
+    makeSomething: function () {
+        console.log('Wake up')
+    }
+}
+
+delete objTip.delProperty
+console.log(objTip)
+
+//for in
+for (let key in objTip ) {
+    if (typeof(objTip[key]) === 'object') {
+    console.log(`key ${key} -`)
+        for (let keyIn in objTip[key]) {
+            console.log(`   key ${keyIn} - ${objTip[key][keyIn]}`)
+        }
+    } else {
+        console.log(`key ${key} - ${objTip[key]}`)
+    }
+}
+
+
+console.log(Object.keys(objTip).length)
+
+
+objTip.makeSomething()
+
+
+// DESTRUCTURING OBJ ES6 
+// classic dest
+// const {wake, Neo} = objTip.c
+
+// deep dest
+const {c: {wake, Neo}} = objTip
+
+console.log('dest', wake, Neo)
 
 
 
