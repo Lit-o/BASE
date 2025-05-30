@@ -21,6 +21,7 @@ console.log(obj.Viva)
 console.log(obj['La Vida'])
 console.log(obj[l + v])
 
+
 let a = 'a'
 `interpolation is ${a} dynamic string` // Template literals or Template strings
 
@@ -32,6 +33,7 @@ console.log(decr--)
 console.log(++incr)
 console.log(--incr)
 
+
 let a1 = 5
 a1 *= 2
 a1 += 1
@@ -39,6 +41,15 @@ a1 -= 2
 a1 /= 4
 a1 %= 2
 console.log(a1)
+
+
+let aC = 1, bC = 2
+console.log(aC < bC)
+console.log(aC > bC)
+console.log(aC <= bC)
+console.log(aC >= bC)
+console.log(aC != bC)
+console.log(aC !== bC)
 
 
 // Short-Circuiting
@@ -57,7 +68,8 @@ let scC = 'check fine' &&
 
 
 
-// LOOPS & CONDITIONS LOOPS & CONDITIONS LOOPS & CONDITIONS LOOPS & CONDITIONS
+// ---------- LOOPS & CONDITIONS LOOPS & CONDITIONS LOOPS & CONDITIONS LOOPS & CONDITIONS
+
 // loop mark
 first: for (let i = 0; i < 7; i++) {
             console.log('i -', i)
@@ -123,12 +135,13 @@ let switchResult = (switchTip) => {
     } 
 }
 console.log(switchResult(15))
+// ---------- END - LOOPS & CONDITIONS 
 
 
 
 
+// ---------- FUNCTIONS FUNCTIONS FUNCTIONS FUNCTIONS FUNCTIONS 
 
-// FUNCTIONS FUNCTIONS FUNCTIONS FUNCTIONS FUNCTIONS 
 //Function Declaration (Hosting)
 function wakeUp1 () {
     return 'Neo...'
@@ -139,7 +152,7 @@ const wakeUp2 = function () {
     return 'Neo...'
 }
 
-// Function Arrow (don't have this, have many tricks)
+// Function Arrow (don't have *this*, have many tricks)
 const wakeUp3 = () => {
 
 }
@@ -163,7 +176,7 @@ const returnBLTip = (n = 0) => {
     )
 }
 
-// function call return something 
+// function call => return something 
 // and this specific instance call result we can linked to variable
 const ten = returnBLTip()
 const eleven = returnBLTip(1)
@@ -191,14 +204,14 @@ function CallbackQueue (arg, callback) {
 }
 
 CallbackQueue(5, Callback2)
+// ---------- FUNCTIONS - END
 
 
 
 
 
+// ---------- STRINGS STRINGS STRINGS STRINGS STRINGS STRINGS
 
-
-// STRINGS STRINGS STRINGS STRINGS STRINGS STRINGS
 //String Tips
 let str1 = 'Wake up, Neo...'
 console.log(str1.length)
@@ -223,12 +236,14 @@ console.log(typeof(strNumber))
 let trimedText = '   Wake .  '
 console.log(trimedText)
 console.log(trimedText.trim())
+// ---------- STRINGS - END
 
 
 
 
 
-// NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+// ---------- NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+
 // Number tips
 const num = 15.25
 
@@ -244,12 +259,14 @@ console.log(typeof(parseFloat(numString)))
 const qNum = '12'
 const qNumNum = +qNum
 console.log(typeof(qNumNum))
+// ---------- NUMBER - END
 
 
 
 
+// ---------- OBJECTS OBJECTS OBJECTS OBJECTS OBJECTS OBJECTS OBJECTS
 
-// OBJECTS OBJECTS OBJECTS OBJECTS OBJECTS OBJECTS OBJECTS
+{
 const objTip = {
     a: 5,
     b: 15,
@@ -287,19 +304,26 @@ objTip.makeSomething()
 
 
 // DESTRUCTURING OBJ ES6 
-// classic dest
-// const {wake, Neo} = objTip.c
+// classic Dest
+const {a, b} = objTip
 
-// deep dest
+// rename on fly Dest
+const {wake:wake1, Neo:Neo1} = objTip.c
+console.log('dest1', wake1, Neo1)
+
+// deep Dest
 const {c: {wake, Neo}} = objTip
-
 console.log('dest', wake, Neo)
 
+}
+// ---------- OBJECTS - END 
 
 
 
 
-// ARRAYS ARRAYS ARRAYS ARRAYS ARRAYS ARRAYS ARRAYS
+
+// ---------- ARRAYS ARRAYS ARRAYS ARRAYS ARRAYS ARRAYS ARRAYS
+
 const ArrTip = ['1', 2, 3, 4]
 // Broke Array.length
 // ArrTip[8] = '9'
@@ -312,11 +336,14 @@ if (Object.keys(ArrTip).length === ArrTip.length) {
     console.log('array length broken')
 }
 
+// ---------- END - ARRAYS 
 
 
 
 
-// REGEXP REGEXP REGEXP REGEXP REGEXP REGEXP REGEXP
+
+// ---------- REGEXP REGEXP REGEXP REGEXP REGEXP REGEXP REGEXP
+
 // Validation for input user Name with RegExp
 const regexValidationFindExceptions = /[^a-zA-Z0-9\s]/
 
@@ -334,9 +361,13 @@ function validator(e) {
 validator('fdf55^%#')
 validator('fdf5')
 validator('fdf5 fdf')
+// ---------- REGEXP 
 
 
-// OTHER STUFF OTHER STUFF OTHER STUFF OTHER STUFF OTHER STUFF
+
+
+
+// ---------- OTHER STUFF OTHER STUFF OTHER STUFF OTHER STUFF OTHER STUFF
 const Str1 = '1234'
 console.log(
     typeof(+Str1)
