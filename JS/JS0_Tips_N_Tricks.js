@@ -325,9 +325,95 @@ console.log('dest', wake, Neo)
 // ---------- ARRAYS ARRAYS ARRAYS ARRAYS ARRAYS ARRAYS ARRAYS
 
 const ArrTip = ['1', 2, 3, 4]
+
+// Mutate array by del last elem and return this elem 
+const lastElem = ArrTip.pop()
+console.log(ArrTip)
+console.log(lastElem)
+
+// Mutate array by adding new elem to the end
+ArrTip.push(4)
+console.log(ArrTip)
+
+// Rare becouse heavy methods "shift" as del and "unshift" as add
+// with start of array (like 'pop' and 'push') 
+
+
+// del 3rd elem
+// delete ArrTip[2]
+
+
+// 'splice'
+// del from index count of elements and implement newElements
+// ArrTip.splice(index, count, newElements)
+
+
+// 'slice' create new array from start to end(start index included / end index not included)
+const newArr = ArrTip.slice(0, ArrTip.length - 2)
+const newArr2 = ArrTip.slice(2)
+console.log(newArr)
+
+
+// 'sort' need sort func, mutate arr
+// sort under the hood have quicksort algo
+const sortArr = [12, 5, 3, 1, 7, 15]
+const compareNum = (a, b) => a - b
+sortArr.sort(compareNum)
+console.log(sortArr)
+
+
+// 'reverse'
+newArr.reverse()
+
+
+// 'concat' make new copy of array and add (argsElem)
+const newNew = newArr.concat('b','c')
+console.log(newNew)
+
+
+for (let i = 0; i < ArrTip.length; i++) {
+    console.log(ArrTip[i])
+}
+
+// for of working with array, strings, pseudo-array(DOM arrays of elem that doesn't have array methods)
+// break and continue wellcome if needed
+for (let elem of ArrTip) {
+    console.log('for of', elem)
+}
+
+// forEach, map(make new arr), some, every, reduce, filter(make new arr) 
+
+// forEach
+// Unlike map(), forEach allways return undefined
+// and it's not chainable
+// Typical use case is to execute side effects at the end of the chain
+
+// There is no way to stop or break a forEach() loop other than by throwing an exception
+// break and continue not allowed
+
+// Array methods like every(), some(), find(), and findIndex() 
+// also stops iteration immediately when further iteration is not necessary.
+
+// forEach() expects a synchronous function — it does not wait for promises. 
+// Make sure you are aware of the implications while using promises (or async functions) as forEach callbacks.
+ArrTip.forEach((element, i, ArrTip) => {
+    return element + 'forEach mod'
+});
+
+
+// 'split' make Array from String
+const str = 'Wake up, Neo...'
+console.log(str.split(' '))
+console.log(str.split(''))
+
+// 'join' make String from Array
+const strSum = str.split('').join('!')
+console.log(strSum)
+
+
 // Broke Array.length
-// ArrTip[8] = '9'
-// console.log(ArrTip)
+ArrTip[8] = '9'
+console.log(ArrTip)
 
 //Check broken Array.length
 if (Object.keys(ArrTip).length === ArrTip.length) {
