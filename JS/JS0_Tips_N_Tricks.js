@@ -298,6 +298,24 @@ console.log('dest', wake, Neo)
 
 
 
+
+// ARRAYS ARRAYS ARRAYS ARRAYS ARRAYS ARRAYS ARRAYS
+const ArrTip = ['1', 2, 3, 4]
+// Broke Array.length
+// ArrTip[8] = '9'
+// console.log(ArrTip)
+
+//Check broken Array.length
+if (Object.keys(ArrTip).length === ArrTip.length) {
+    console.log('array length fine')
+} else {
+    console.log('array length broken')
+}
+
+
+
+
+
 // REGEXP REGEXP REGEXP REGEXP REGEXP REGEXP REGEXP
 // Validation for input user Name with RegExp
 const regexValidationFindExceptions = /[^a-zA-Z0-9\s]/
