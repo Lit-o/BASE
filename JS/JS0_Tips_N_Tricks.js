@@ -225,6 +225,10 @@ console.log(trimedText)
 console.log(trimedText.trim())
 
 
+
+
+
+// NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
 // Number tips
 const num = 15.25
 
@@ -237,11 +241,39 @@ console.log(parseInt(numString))
 console.log(parseFloat(numString))
 console.log(typeof(parseFloat(numString)))
 
+const qNum = '12'
+const qNumNum = +qNum
+console.log(typeof(qNumNum))
 
 
 
 
 
+
+
+
+
+// REGEXP REGEXP REGEXP REGEXP REGEXP REGEXP REGEXP
+// Validation for input user Name with RegExp
+const regexValidationFindExceptions = /[^a-zA-Z0-9\s]/
+
+function validator(e) {
+    const exceptionsMatches = regexValidationFindExceptions.exec(e); // either an array or null
+    const isExceptions = Boolean(exceptionsMatches);
+
+    if (!isExceptions) {
+        console.log('go')
+    }  else {
+        console.log('stop')
+    }
+}
+
+validator('fdf55^%#')
+validator('fdf5')
+validator('fdf5 fdf')
+
+
+// OTHER STUFF OTHER STUFF OTHER STUFF OTHER STUFF OTHER STUFF
 const Str1 = '1234'
 console.log(
     typeof(+Str1)
@@ -455,20 +487,4 @@ console.log(ClosureCounter1.getCount())
 console.log(ClosureCounter2.getCount())
 
 
-// Validation for input user Name with RegExp
-const regexValidationFindExceptions = /[^a-zA-Z0-9\s]/
 
-function validator(e) {
-    const exceptionsMatches = regexValidationFindExceptions.exec(e); // either an array or null
-    const isExceptions = Boolean(exceptionsMatches);
-
-    if (!isExceptions) {
-        console.log('go')
-    }  else {
-        console.log('stop')
-    }
-}
-
-validator('fdf55^%#')
-validator('fdf5')
-validator('fdf5 fdf')
