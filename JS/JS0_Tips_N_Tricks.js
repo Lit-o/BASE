@@ -78,6 +78,9 @@ first: for (let i = 0; i < 4; i++) {
     }
 }
 
+
+
+// FUNCTIONS FUNCTIONS FUNCTIONS FUNCTIONS FUNCTIONS 
 //Function Declaration (Hosting)
 function wakeUp1 () {
     return 'Neo...'
@@ -119,6 +122,35 @@ const eleven = returnBLTip(1)
 console.log(ten)
 console.log(eleven)
 
+// Callback - when we neet our specific queue of func calls
+function Callback1 () {
+    setTimeout(()=>{
+        console.log('Callback1', 'delay 500')
+    }, 500)
+}
+
+function Callback2 () {
+    console.log('Callback2')
+}
+
+// Callback template - when function take another function as argument
+// and call it in queue that needed 
+function CallbackQueue (arg, callback) {
+    setTimeout(()=>{
+        console.log('Callback Queue ', arg, ' delay 500')
+        callback()
+    }, 500)
+}
+
+CallbackQueue(5, Callback2)
+
+
+
+
+
+
+
+// STRINGS STRINGS STRINGS STRINGS STRINGS STRINGS
 //String Tips
 let str1 = 'Wake up, Neo...'
 console.log(str1.length)
