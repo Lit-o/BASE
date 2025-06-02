@@ -422,6 +422,25 @@ if (Object.keys(ArrTip).length === ArrTip.length) {
     console.log('array length broken')
 }
 
+
+// Fix Broken Array
+const ArrBr = [22,33,44,55]
+ArrBr[9] = 99
+const ArrFx =[]
+
+// for (let ArrBrelem of ArrBr) {
+//     console.log(ArrBrelem)
+// }
+
+for (let ai = 0; ai < ArrBr.length; ai++) {
+    if(ArrBr[ai] === undefined) {
+        ArrFx[ai] = 'Empty item' 
+    } else {
+        ArrFx[ai] = ArrBr[ai]
+    }
+}
+
+console.log(ArrFx)
 // ---------- END - ARRAYS 
 
 
