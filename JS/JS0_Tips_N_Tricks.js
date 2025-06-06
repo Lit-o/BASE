@@ -447,6 +447,59 @@ console.log(ArrFx)
 
 
 
+// ---------- (SPREAD) COPY VALUE OR LINK AND SPREAD OPERATOR - COPY VALUE OR LINK AND SPREAD OPERATOR 
+{
+    // PRIMITIVES COPY BY JUST VALUE AND DON'T HAVE EFFECTS TO EACH OTHER
+    let a = 5,
+        b = a
+    b = a + 10
+    console.log(a, b)
+
+    // OBJECTS COPY BY LINK AND CHANGE EACH OTHER
+    const objA = {a: 5, b: 10}
+    const objB = objA
+    objB.a = 1
+    objA.b = 12
+    objB.c = 15
+    console.log(objA)
+    console.log(objB)
+
+    // shallow and deep copy (SPREAD (ARR ES6, OBJ ES9))
+    // SPREAD operator 'open and return' shallow data from ARRAY or OBJECT
+    const ObjShallowCopyByObjSpreadES9Operator = {...objA, 'AddSomeNewData': 5}
+    ObjShallowCopyByObjSpreadES9Operator.b = 1
+    console.log(objA)
+    console.log(ObjShallowCopyByObjSpreadES9Operator)
+
+    const arrSum = [5, 11, 12]
+    function spreadSum (a,b,c) {
+        console.log(a + b + c)
+    }
+    spreadSum(...arrSum)
+    // !!! OBJ DOESN'T WORKING LIKE THAT
+    // const objSum = {a: 5, b: 5, c: 5}
+    // spreadSum(...objSum) 
+
+    const arr1 = [2, 4, 5, {a:5,b:5}]
+    const shallowArr1 = [...arr1]
+    shallowArr1[0] = 0
+    shallowArr1[3].a = 0
+    console.log(arr1)
+    console.log(shallowArr1)
+}
+// ---------- END
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ---------- REGEXP REGEXP REGEXP REGEXP REGEXP REGEXP REGEXP
 
