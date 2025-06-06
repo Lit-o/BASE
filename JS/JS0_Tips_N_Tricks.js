@@ -1,3 +1,4 @@
+"use strict"
 // A New standardized version of JS - ES6 2015 
 // (let const, ... , arrow func, and other stuff)
 
@@ -620,7 +621,7 @@ function recursionPower(base, exponent) {
 // or processing several branches, each of which can have more branches
 
 console.log(Math.ceil(62.1))
-console.log(Math.floor(62.9999))
+console.log(Math.floor(62.99999))
 
 console.log(Math.floor(Math.random() * 100 + 1))
 //chance 1 to 100
