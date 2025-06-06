@@ -464,7 +464,7 @@ console.log(ArrFx)
     console.log(objA)
     console.log(objB)
 
-    // shallow and deep copy (SPREAD (ARR ES6, OBJ ES9))
+    // shallow and deep copy (SPREAD (ARR ES6, OBJ (ES9 2018)))
     // SPREAD operator 'open and return' shallow data from ARRAY or OBJECT
     const ObjShallowCopyByObjSpreadES9Operator = {...objA, 'AddSomeNewData': 5}
     ObjShallowCopyByObjSpreadES9Operator.b = 1
@@ -488,9 +488,6 @@ console.log(ArrFx)
     console.log(shallowArr1)
 }
 // ---------- END
-
-
-
 
 
 
@@ -741,3 +738,22 @@ console.log(ClosureCounter2.getCount())
 
 
 
+
+// ---------- PROTOTYPES
+{
+    const starter = {
+        begin: function () {
+            console.log('Let\'s something begin!')
+        }, 
+        end: ()=>{console.log('end')}
+    } 
+
+    const launcher = Object.create(starter)
+    const firestarter = {begin:()=>{console.log('Ama FIRESTARTA')}}
+    
+    Object.setPrototypeOf(firestarter, starter)
+
+    launcher.begin()
+    firestarter.begin()
+    firestarter.end()
+}
