@@ -54,6 +54,7 @@ console.log(aC !== bC)
 
 
 // Short-Circuiting
+// 0, '', null, undefined, NaN -> FALSE
 let sc1 = true || 'heavy function that even doesn\'t started'
 console.log(sc1)
 let sc2 = false && 'heavy function that even doesn\'t started'
@@ -205,6 +206,63 @@ function CallbackQueue (arg, callback) {
 }
 
 CallbackQueue(5, Callback2)
+
+// CLOSURE SCOPE LEXICAL ENVIRONMENT lexical environment
+
+// Closure for incapsulation (Caps first letter because function like OOP class)
+function Counter() {
+    let count = 0
+    return {
+        increment() { count++ },
+        getCount() { return count}
+    }
+}
+
+const ClosureCounter1 = Counter()
+const ClosureCounter2 = Counter()
+
+ClosureCounter1.increment()
+ClosureCounter1.increment()
+console.log(ClosureCounter1.getCount())
+console.log(ClosureCounter2.getCount())
+
+// ! TIP CLOSURE
+// CLOSURE purpose - Freeze UpLvlAbstraction (calculated on fly) data 
+// for able to LowLvlAbstraction instance with its specific data
+// React case:
+// Custom hooks, for example:
+// On High Abstraction level We activate and prepare some object 
+// from LIBS with some current Project High Level Data, and after that 
+// we can use prepared libs stuff into 
+// other target down-level places with local arguments
+
+function multiplier(factor) {
+    return function(number) {
+      return number * factor;
+    };
+  }
+  
+  var twice = multiplier(2);
+  console.log(twice(5));
+  // → 10
+
+
+// ! TIP RECURSION
+function recursionPower(base, exponent) {
+    if (exponent == 0)
+      return 1;
+    else
+      return base * recursionPower(base, exponent - 1);
+  }
+  
+  console.log(recursionPower(2, 5));
+
+// JS recursion implementations, it’s about ten times 
+// slower than the looping(for)
+// Often Recursion needed when we have task that require exploring 
+// or processing several branches, each of which can have more branches
+
+
 // ---------- FUNCTIONS - END
 
 
@@ -653,40 +711,6 @@ function example() {
 }
 
 
-// ! TIP CLOSURE
-// CLOSURE purpose - Freeze UpLvlAbstraction (calculated on fly) data 
-// for able to LowLvlAbstraction instance with its specific data
-// React case:
-// Custom hooks, for example:
-// On High Abstraction level We activate and prepare some object 
-// from LIBS with some current Project Hugh Level Data, and after that 
-// we can use prepared libs stuff in other target down-level places with local arguments
-
-function multiplier(factor) {
-    return function(number) {
-      return number * factor;
-    };
-  }
-  
-  var twice = multiplier(2);
-  console.log(twice(5));
-  // → 10
-
-
-// ! TIP RECURSION
-function recursionPower(base, exponent) {
-    if (exponent == 0)
-      return 1;
-    else
-      return base * recursionPower(base, exponent - 1);
-  }
-  
-  console.log(recursionPower(2, 5));
-
-// JS recursion implementations, it’s about ten times 
-// slower than the looping(for)
-// Often Recursion needed when we have task that require exploring 
-// or processing several branches, each of which can have more branches
 
 console.log(Math.ceil(62.1))
 console.log(Math.floor(62.99999))
@@ -737,22 +761,7 @@ function sum (array) {
 }
 
 
-// Closure for incapsulation (Caps first letter because function like OOP class)
-function Counter() {
-    let count = 0
-    return {
-        increment() { count++ },
-        getCount() { return count}
-    }
-}
 
-const ClosureCounter1 = Counter()
-const ClosureCounter2 = Counter()
-
-ClosureCounter1.increment()
-ClosureCounter1.increment()
-console.log(ClosureCounter1.getCount())
-console.log(ClosureCounter2.getCount())
 
 
 
