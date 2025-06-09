@@ -523,7 +523,25 @@ validator('fdf5 fdf')
 
 
 
+
+
+
+
 // ---------- OTHER STUFF OTHER STUFF OTHER STUFF OTHER STUFF OTHER STUFF
+
+// ---------- Debug
+// gooDevTools -> Sources -> myScript.js -> Breakpoints
+const debug1 = () => {
+    console.log('stop')
+    debugger
+}
+
+
+
+
+
+
+
 const Str1 = '1234'
 console.log(
     typeof(+Str1)
