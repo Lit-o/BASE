@@ -891,12 +891,14 @@ console.log(0 ?? 5) // -> 0
 
 // ?.  ES11 2020 - Optional Chaining Operator
 // old solution
-if (obj) {
-    console.log(obj.objPropertyWeNeededIfItHas)
+if (obj && obj.data && obj.data.objPropertyWeNeededIfItHas) {
+    console.log(obj.data.objPropertyWeNeededIfItHas)
 }
 // left side check for 'undefined' or 'null' 
 // and stop this operation if find them 
-obj?.innerProps
+obj?.data?.innerProps
+
+obj?.someMethod?.()
 // if obj doesn't exist, return 'undefined'
 // without error and breaking code flow
 
