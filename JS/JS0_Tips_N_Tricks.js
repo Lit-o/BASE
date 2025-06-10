@@ -886,6 +886,7 @@ console.log(null ?? 5) // -> 5
 console.log(undefined ?? 5) // -> 5
 console.log(false ?? 5) // -> false
 console.log(0 ?? 5) // -> 0
+// Caution!  ?? can't be used with && or ||
 
 
 //Advanced OBJECT Type detect
