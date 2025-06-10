@@ -868,3 +868,14 @@ console.log('a' > 'я')
 console.dir(querySelectorAll('.someClass'))
 // dir - in web browser can return 
 // info about element - data and its methods 
+
+
+//Advanced OBJECT Type detect
+console.log(Object.prototype.toString.call({a:4,b:2}))
+console.log(Object.prototype.toString.call([4,2]))
+console.log(Object.prototype.toString.call('a:4,b:2'))
+console.log(Object.prototype.toString.call(4))
+console.log(Object.prototype.toString.call(NaN))
+console.log(Object.prototype.toString.call(undefined))
+console.log(Object.prototype.toString.call(null))
+
