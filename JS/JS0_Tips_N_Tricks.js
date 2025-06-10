@@ -851,3 +851,8 @@ function sum (array) {
     // return first true and true-like value
     // if all false -> return the rightmost(final) value
 }
+
+// UNICODE CHARACTERS COMPARE
+// русские буквы А - 1040, Б - 1041 ... а - 1072, б - 1073...
+// особенности Ë и ё - Я - 1071 Ë - 1025, я - 1103, ё - 1105
+console.log('a' > 'я')
