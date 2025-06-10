@@ -275,6 +275,8 @@ function recursionPower(base, exponent) {
 // Often Recursion needed when we have task that require exploring 
 // or processing several branches, each of which can have more branches
 // say simple - Recursion good pattern for working with trees
+// say advanced - Recursion good pattern for working 
+// with unknown structure trees
 
 
 // ---------- FUNCTIONS - END
