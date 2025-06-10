@@ -357,6 +357,12 @@ const objTip = {
 delete objTip.delProperty
 console.log(objTip)
 
+console.log(Object.keys(objTip).length)
+
+console.log(Object.values(objTip))
+// Object.values() working like spread operator, return array of values, 
+// working like for .. in, but for .. in can return proto keys and values
+
 //for in
 for (let key in objTip ) {
     if (typeof(objTip[key]) === 'object') {
@@ -368,9 +374,6 @@ for (let key in objTip ) {
         console.log(`key ${key} - ${objTip[key]}`)
     }
 }
-
-
-console.log(Object.keys(objTip).length)
 
 
 objTip.makeSomething()
