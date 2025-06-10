@@ -856,3 +856,9 @@ function sum (array) {
 // русские буквы А - 1040, Б - 1041 ... а - 1072, б - 1073...
 // особенности Ë и ё - Я - 1071 Ë - 1025, я - 1103, ё - 1105
 console.log('a' > 'я')
+
+
+// CONSOLE.DIR for WEB
+console.dir(querySelectorAll('.someClass'))
+// dir - in web browser can return 
+// info about element - data and its methods 
