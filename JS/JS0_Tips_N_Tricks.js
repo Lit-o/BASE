@@ -402,6 +402,8 @@ console.log('dest', wake, Neo)
 
 const ArrTip = ['1', 2, 3, 4]
 
+console.log(Array.isArray(ArrTip))
+
 // Mutate array by del last elem and return this elem 
 const lastElem = ArrTip.pop()
 console.log(ArrTip)
