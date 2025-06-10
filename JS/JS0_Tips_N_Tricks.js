@@ -66,6 +66,19 @@ let scC = 'check fine' &&
 'condition - true' 
 && true && 'Action that we needed after all success checks'
 
+// ! AND && OR || ----------
+console.log(2 && 1 && null && 0 && undefined) // -> null
+// return first false or first false-like value(0,'', null, undefined, NaN), 
+// if all true -> return the rightmost(final) value
+
+
+console.log(null || 0 || undefined) // -> undefined
+// return first true or first true-like value
+// if all false -> return the rightmost(final) value
+
+console.log(55 || 2 && 0 || 4) // -> 55
+console.log((55 || 2) && 0 || 4) // -> 4
+// && > || -> first priority - && and second priority - ||
 
 
 
@@ -783,4 +796,58 @@ function sum (array) {
     launcher.begin()
     firestarter.begin()
     firestarter.end()
+}
+
+
+
+
+// ---------- SPICY TIPS 
+{
+    let A = 5
+
+    console.log(A++)
+    //A++ operation 
+    //Return current-A-state(5), and after that update-A-variable with +1(6)
+    
+    console.log(--A)
+    // Return new state(4) and update A variable with new state(4)
+
+
+
+    // ----------
+    // EMPTY ARRAY WITH CONCATINATION (+) TRANSFORM TO ""
+    console.log(typeof([] + 2)) // -> STRING!
+
+    console.log([] + false) // -> 'false' as STRING!
+    //Return 'false' as string, becouse [] with + transform to empty string
+    // and empty string have concat + to other operants
+
+    console.log([] + false - null + true) // -> NaN ('false' - null)
+
+    console.log(typeof([] + 1 + 2)) // -> '12' as a string
+
+
+
+    // ----------
+    let y = 1
+    let x = y = 2
+    console.log(x) // -> 2
+    // y = 2 -> x = y -> log(x) -> 2
+
+
+
+    // ----------
+    console.log('1'[0]) // '1' as a string
+
+
+
+    // ! AND && OR || ----------
+    console.log(2 && 1 && null && 0 && undefined) // -> null
+    // return first false and false-like value(0,'', null, undefined, NaN), 
+    // if all true -> return the rightmost(final) value
+    
+    
+    console.log(null || 0 || undefined) // -> undefined
+    // return first true and true-like value
+    // if all false -> return the rightmost(final) value
 }
