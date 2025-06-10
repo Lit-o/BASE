@@ -303,6 +303,13 @@ console.log(str3.slice(5))
 console.log(str3.slice(5, 10))
 console.log(str3.slice(-5, -2))
 
+
+// Big stringcut
+const bigString = '1234567891012abcd'
+const bigStringCut = `${bigString.slice(0,7)}...`
+console.log(bigStringCut)
+
+
 // number to string
 let strNumber = 123
 strNumber += ''
