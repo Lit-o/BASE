@@ -879,6 +879,15 @@ console.dir(querySelectorAll('.someClass'))
 // info about element - data and its methods 
 
 
+// ES11 2020 Nullish -> ??
+// ?? like || but watch only null or undefined as false, 
+// other false-like stuff even false-itself take as true
+console.log(null ?? 5) // -> 5
+console.log(undefined ?? 5) // -> 5
+console.log(false ?? 5) // -> false
+console.log(0 ?? 5) // -> 0
+
+
 //Advanced OBJECT Type detect
 console.log(Object.prototype.toString.call({a:4,b:2}))
 console.log(Object.prototype.toString.call([4,2]))
