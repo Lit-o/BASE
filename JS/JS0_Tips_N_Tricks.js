@@ -879,7 +879,7 @@ console.dir(querySelectorAll('.someClass'))
 // info about element - data and its methods 
 
 
-// ES11 2020 Nullish -> ??
+// ??  ES11 2020 Nullish -> ??
 // ?? like || but watch only null or undefined as false, 
 // other false-like stuff even false-itself take as true
 console.log(null ?? 5) // -> 5
@@ -887,6 +887,18 @@ console.log(undefined ?? 5) // -> 5
 console.log(false ?? 5) // -> false
 console.log(0 ?? 5) // -> 0
 // Caution!  ?? can't be used with && or ||
+
+
+// ?.  ES11 2020 - Optional Chaining Operator
+// old solution
+if (obj) {
+    console.log(obj.objPropertyWeNeededIfItHas)
+}
+// left side check for 'undefined' or 'null' 
+// and stop this operation if find them 
+obj?.innerProps
+// if obj doesn't exist, return 'undefined'
+// without error and breaking code flow
 
 
 //Advanced OBJECT Type detect
