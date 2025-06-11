@@ -21,7 +21,7 @@
 // and functions declared within the current scope.
 
 // Outer Lexical Environment Reference: 
-// This refers to the lexical environment of the parent scope, 
+// This refers to the lexical environme`nt of the parent scope, 
 // forming a chain of environments.
 
 // Creation:
@@ -71,7 +71,8 @@
 
 // ! MY TIP ABOUT CLOSURE
 // CLOSURE purpose - Freeze UpLvlAbstraction (calculated on fly) data 
-// for able to LowLvlAbstraction instance with its specific data
+// for able to LowLvlAbstraction instance with its specific data 
+// and specific time when its needed
 // React case:
 // Custom hooks, for example:
 // On High Abstraction level We activate and prepare some object 
