@@ -370,11 +370,37 @@ const objTip = {
 delete objTip.delProperty
 console.log(objTip)
 
+
+// 3 ARRAYS RETURN FROM OBJ METHODS 
 console.log(Object.keys(objTip).length)
+// return array of properties names as string
 
 console.log(Object.values(objTip))
 // Object.values() working like spread operator, return array of values, 
 // working like for .. in, but for .. in can return proto keys and values
+
+console.log(Object.entries(objTip))
+// retunr array like -> [['key1','value1'],['key2','value2']]
+
+
+
+// ASSIGN like Spread
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+
+const returnedTarget = Object.assign(target, source);
+
+console.log(target);
+// Expected output: Object { a: 1, b: 4, c: 5 }
+
+console.log(returnedTarget === target);
+
+target.a = 5
+
+console.log(returnedTarget);
+// Expected output: true
+
+
 
 //for in
 for (let key in objTip ) {
@@ -423,6 +449,62 @@ console.log(firstObj)
 console.log(shallowCopyObj)
 console.log(deepCopyObj)
 console.log(JSONTricDeepCopy)
+
+
+// ADVANCED OBJECT STUFF 
+let objUser = {
+    name: 'Neo',
+    age: 30,
+    'The Matrix': 'has you...'
+}
+
+console.log(Object.getOwnPropertyDescriptor(objUser, 'name'))
+// writable 
+// by default = true
+// enumerable
+// by default = true
+// configurable
+// by default = true
+
+Object.defineProperty(objUser, 'The Matrix', {writable: false, enumerable: false, configurable: false})
+
+//Create new prop
+Object.defineProperty(objUser, 'wake', {value: 'wake up, Neo...', writable: false, enumerable: true})
+
+//TypeError: Cannot redefine property: The Matrix
+Object.defineProperty(objUser, 'The Matrix', {writable: true, enumerable: true, configurable: true})
+
+// writable 
+// When create by Object.defineProperty by default = false
+// enumerable
+// When create by Object.defineProperty by default = false
+// configurable
+// When create by Object.defineProperty by default = false
+
+// When 'configurable' : false => after that even defineProperty doesn't work
+
+console.log(objUser)
+
+
+//Close object to extend with new props
+Object.preventExtensions({a:1})
+
+// make obj read-only
+Object.freeze({a:1})
+
+// Close object to extend with new props,
+// close current props for settings,
+// but allow change values
+Object.seal({a:1})
+
+Object.isExtensible()
+Object.isFrozen()
+Object.isSealed()
+
+// Object.is - A boolean indicating whether or not the two arguments are the same value.
+// like ===
+console.log(Object.is(5, 5))
+
 // ---------- OBJECTS - END 
 
 
