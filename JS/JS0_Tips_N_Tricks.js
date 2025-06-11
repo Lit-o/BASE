@@ -318,6 +318,10 @@ console.log(typeof(strNumber))
 let trimedText = '   Wake .  '
 console.log(trimedText)
 console.log(trimedText.trim())
+
+let emptyArrayWithConcatGotoStrings = [] + 5
+console.log(emptyArrayWithConcatGotoStrings)
+console.log(typeof(emptyArrayWithConcatGotoStrings))
 // ---------- STRINGS - END
 
 
