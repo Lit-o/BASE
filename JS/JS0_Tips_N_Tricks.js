@@ -403,8 +403,26 @@ console.log('dest1', wake1, Neo1)
 // deep Dest
 const {c: {wake, Neo}} = objTip
 console.log('dest', wake, Neo)
-
 }
+
+//SPREAD ES9 Operator
+const firstObj = {a:5,b:5, c: 'five', d:{a:5, b:5, c: {innerC1:1, innerC2:2 }}}
+const shallowCopyObj = {...firstObj}
+const deepCopyObj = {...firstObj, 
+    d: {...firstObj.d,
+        c: {...firstObj.d.c}
+    }
+}
+const JSONTricDeepCopy = JSON.parse(JSON.stringify(firstObj))
+
+firstObj.a = 15
+firstObj.d.a = 20
+firstObj.d.c.innerC1 = 20
+
+console.log(firstObj)
+console.log(shallowCopyObj)
+console.log(deepCopyObj)
+console.log(JSONTricDeepCopy)
 // ---------- OBJECTS - END 
 
 
