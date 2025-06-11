@@ -505,6 +505,16 @@ Object.isSealed()
 // like ===
 console.log(Object.is(5, 5))
 
+//map
+const objMaped = {
+    aObj: {a:1},
+    b:2
+} 
+const myMap = new Map
+
+myMap.set(objMaped.aObj, 15)
+
+console.log(myMap)
 // ---------- OBJECTS - END 
 
 
