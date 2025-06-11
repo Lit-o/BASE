@@ -632,6 +632,12 @@ for (let ai = 0; ai < ArrBr.length; ai++) {
 }
 
 console.log(ArrFx)
+
+
+// Set
+const arrSet = [1,1,1,2,2,3,4,5,5]
+const clearDoubles = new Set(arrSet)
+console.log(clearDoubles)
 // ---------- END - ARRAYS 
 
 
