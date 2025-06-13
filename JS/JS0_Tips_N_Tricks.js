@@ -24,7 +24,8 @@ console.log(obj[l + v])
 
 
 let a = 'a'
-`interpolation is ${a} dynamic string` // Template literals or Template strings
+console.log(`interpolation is ${a + 5 > 12 / 6 +'' && 'dyn'} dynamic string`) 
+// Template literals or Template strings
 
 
 let incr = 5
@@ -1032,3 +1033,53 @@ console.log(Object.prototype.toString.call(NaN))
 console.log(Object.prototype.toString.call(undefined))
 console.log(Object.prototype.toString.call(null))
 
+
+
+// Time
+
+const timer1 = setTimeout((data)=>{
+    console.log(data)
+}, 500, 'text')
+
+function logger(data,data2) {
+    console.log(data, data2 + '')
+}
+                         //func,     time delay,   args for func
+const timer2 = setTimeout(logger,       1000,           '4')
+const timer3 = setTimeout(logger,       1000,       '5', 'undef')
+clearTimeout(timer2)
+
+
+let globalInterval
+
+const startTimerInterval = () => {
+    globalInterval = setInterval(logger, 500, 'tic', 'tac')
+}
+
+startTimerInterval()
+
+clearInterval(globalInterval)
+
+
+
+function logger2(data,data2) {
+    console.log(data, data2 + '')
+}
+
+let recursionTimeout = setTimeout(function loop(t,t2){
+    //body of function
+    logger2(t, t2)
+    // loop settings
+    // recursionTimeout = (setTimeout((t)=>{loop(t)}, 500, t))
+    recursionTimeout = (setTimeout(loop, 500, t, t2))
+}, 500, 'recursionTimeTest', 'tdata')
+
+
+setTimeout(()=>{
+    clearTimeout(recursionTimeout)
+}, 5000)
+// Recursion setTimeout can be better than setInterval for special case
+// Becouse setInterval doesn't care about how long function work
+// (for example big heavy logger)
+// setInterval just STARTED function every time Tick
+// Recursion setTimeout whait setTimeout body work done and start new iteration
