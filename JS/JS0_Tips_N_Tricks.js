@@ -1198,3 +1198,37 @@ const dbl = multy.bind({hi:'hello', mlt: 2})
 console.log(dbl(5))
 
 
+
+
+// Classes ES6 2015
+// class name starts with a Capital letter
+class Shape {
+    constructor(height, width) {
+        this.h = height
+        this.w = width
+    }
+
+    calculateArea() {
+        return this.h * this.w
+    }
+}
+
+const square = new Shape(4,4)
+
+console.log(square)
+console.log(typeof(square))
+console.log(square.calculateArea())
+
+class ColoredShape extends Shape {
+    constructor (height, width, color){
+        super(height, width)
+        this.c = color
+    }
+
+    showProps () {
+        console.log(this.h, this.w, this.c)
+    }
+}
+
+const BSquare = new ColoredShape (10, 10, '#007')
+BSquare.showProps()
