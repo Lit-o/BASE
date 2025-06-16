@@ -1232,3 +1232,15 @@ class ColoredShape extends Shape {
 
 const BSquare = new ColoredShape (10, 10, '#007')
 BSquare.showProps()
+
+
+
+// REST operator and default
+// REST operator must be last param and its make array of elements after defined params
+// in example after 2 args to defined param(a, b) all args going to RestElementsMustBeLast array
+// if rest is empty - return empty array -> []
+function restFunc (a, b = 2, ...RestElementsMustBeLast) {
+    console.log(a, b, RestElementsMustBeLast)
+}
+
+restFunc('a', undefined , 5,5,5,5,5,5,5,5)
