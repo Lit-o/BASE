@@ -346,6 +346,9 @@ console.log(typeof(parseFloat(numString)))
 const qNum = '12'
 const qNumNum = +qNum
 console.log(typeof(qNumNum))
+
+const toFixedNum = 15.12345678
+console.log(toFixedNum.toFixed(4))
 // ---------- NUMBER - END
 
 
@@ -1244,3 +1247,41 @@ function restFunc (a, b = 2, ...RestElementsMustBeLast) {
 }
 
 restFunc('a', undefined , 5,5,5,5,5,5,5,5)
+
+
+
+
+// API STUFF API STUFF API STUFF API STUFF API STUFF API STUFF
+// AJAX
+
+// XMLHttpRequest - first obj and system for Async client-server without refresh page working
+const request1 = new XMLHttpRequest()
+
+// request1.open(method, url, async, login, pass)
+request1.open('GET', 'http://www.web.com')
+request1.setRequestHeader('Content-type', 'application/json; charset=utf-8')
+request1.send()
+
+// request1.status
+// request1.statusText
+// request1.response
+// request1.readyState
+
+request1.addEventListener('readystatechange', () => {
+    if(request1.readyState === 4 && request1.status === 200) {
+        console.log(JSON.parse(request1.response))
+    } else if(request1.status === 404) {
+        console.log('not found')
+    }
+})
+// request1.send(bodyWhenPOST)
+
+
+// load doesn't have readyState check, it's working only with complete response (success or not)
+request1.addEventListener('load', () => {
+    if(request1.status === 200) {
+        console.log(JSON.parse(request1.response))
+    } else if(request1.status === 404) { 
+        console.log('not found')
+    }
+})
