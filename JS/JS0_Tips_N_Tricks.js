@@ -1083,3 +1083,78 @@ setTimeout(()=>{
 // (for example big heavy logger)
 // setInterval just STARTED function every time Tick
 // Recursion setTimeout whait setTimeout body work done and start new iteration
+
+
+
+
+// Date
+const myDateNow = new Date()
+console.log(myDateNow)
+//2025-06-16T07:49:18.038Z  -> UTC output
+
+
+// input typeDate HTML5 can give Date string from web client
+const myDateFromString = new Date('2025-06-16')
+// old way of declaration by string Date.parse('2025-06-16')
+const myDateFromString2 = new Date(Date.parse('2025-06-16'))
+console.log(typeof(myDateFromString))
+
+
+// month enumerate start from 0 ..to.. 11 in the input param mode
+const myDateFromParam = new Date(2025, 6, 16, 20)
+console.log(myDateFromParam)
+
+// GMT, Greenwich Mean Time, GMT
+// UTC, Coordinated Universal Time, UTC
+// GMT and UTC are the same, the difference about seconds
+
+
+// milliseconds start from 1970
+const myDateZero = new Date(0)
+console.log(myDateZero)
+
+
+// Get date info
+const myDateNowGet = new Date()
+console.log(myDateNowGet.getFullYear())
+console.log(myDateNowGet.getMonth()) // from 0 to 11
+console.log(myDateNowGet.getDate()) // get day from 1 to ~30
+console.log(myDateNowGet.getDay()) // get day of week, sunday is 0, saturday is 6
+
+console.log(myDateNowGet.setDate(15, 21, 14)) // set day num first param, next hours, minutes
+
+// Get UTC
+console.log(myDateNowGet.getUTCHours()) // get UTC time
+console.log(myDateNowGet.getHours()) // get local time
+
+console.log(myDateNowGet.getTimezoneOffset()) // difference in minutes
+
+console.log(myDateNowGet.getTime()) // timestamp 
+
+// benchmark
+let start = new Date()
+
+for (let i = 0; i < 500000; i++) {
+    let data = i + 12345
+}
+
+let end = new Date()
+console.log(end - start)
+
+
+// TIMER
+const deadline = ('2025-06-30')
+
+function getTimeRemaining(endtime) {
+    const msTime = Date.parse(endtime) - Date.parse(new Date()),
+          day = Math.floor(msTime / 1000 / 60 / 60 / 24 ),
+          hour = Math.floor((msTime / 1000 / 60 / 60) % 24)
+          minutes = Math.floor((msTime / 1000 / 60 ) % 60)
+          second = Math.floor((msTime / 1000 ) % 60)
+        //   second = Math.floor((msTime / 1000 / 60 / 60) % 24)
+         
+
+    return {msTime, day, hour, minutes, second}
+}
+console.log(getTimeRemaining(deadline))
+
