@@ -1158,3 +1158,43 @@ function getTimeRemaining(endtime) {
 }
 console.log(getTimeRemaining(deadline))
 
+
+
+// THIS THIS THIS
+// 1) THIS - func window or undefined
+// 2) THIS - into objects methods(function deep into methods doesn't have same THIS)
+// 3) THIS - class
+// 4) THIS - function with call, apply, bind
+
+// 5) THIS - arrow func doesn't have own THIS, 
+// but take THIS from parent scope(useful in case 2 and deep func composition)
+
+const thisObj = {
+    abb: 'baa',
+    baa: 'abb',
+    conca: function () {
+        console.log(this.abb + this.baa)
+    }
+}
+thisObj.conca()
+
+
+function thisFunc (a) {
+    console.log(this, a)
+}
+//call func with tmp on fly context
+thisFunc() // Err
+thisFunc.call(2, 'go') // 2
+thisFunc.apply(2, ['yea']) // 2
+
+
+function multy (a) {
+    console.log(this.hi)
+    return this.mlt * a
+}
+// create new func with bind context
+const dbl = multy.bind({hi:'hello', mlt: 2})
+
+console.log(dbl(5))
+
+
