@@ -595,6 +595,13 @@ const filtered5Down = [6,7,4,2,6,7,8,1,4,2,1].filter((el,i) => {
 })
 console.log(filtered5Down)
 
+// every/some -> return true/false
+// take info about array. Is every or some element meet the condition?
+const everySome = ['1', '2', 3, 4]
+console.log(everySome.every(el => typeof(el) === 'number'))
+console.log(everySome.some(el => typeof(el) === 'number'))
+
+
 // forEach
 // Unlike map(), forEach allways return undefined
 // and it's not chainable
