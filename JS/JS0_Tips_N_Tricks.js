@@ -929,6 +929,22 @@ function sum (array) {
 console.log(sum([5,5,5,5]))
 
 
+// Array Chaining
+const testObj = {
+    boris: 'human',
+    ann: 'human',
+    jim: 'dog',
+    syssy: 'cat'
+}
+
+const humanNames = 
+    Object.entries(testObj)
+    .filter(el => el.some(el => el ==='human'))
+    .map(el => el[0])
+    .map(el => el[0].toUpperCase() + el.slice(1))
+
+console.log(humanNames)
+
 
 
 
