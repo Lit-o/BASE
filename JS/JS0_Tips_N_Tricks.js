@@ -588,6 +588,13 @@ for (let elem of ArrTip) {
 
 // forEach, map(make new arr), some, every, reduce, filter(make new arr) 
 
+const filtered5Down = [6,7,4,2,6,7,8,1,4,2,1].filter((el,i) => {
+    // we need create callback func that return true or false on each iteration for all elements
+    // when we return true, element go to new array, when return false we skip element
+    return el < 5
+})
+console.log(filtered5Down)
+
 // forEach
 // Unlike map(), forEach allways return undefined
 // and it's not chainable
@@ -1286,11 +1293,28 @@ request1.addEventListener('load', () => {
     }
 })
 
+// FETCH  FETCH  FETCH  FETCH  FETCH  FETCH  FETCH 
+// GET
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then(response => response.json())
+    .then(data => console.log(data))
+
+// POST
+fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    body: JSON.stringify({a:5,b:15}),
+    headers: {
+        'Content-type': 'application/json',
+    }
+})
+    .then(response => response.json())
+    .then(data => console.log(data))
+
+
 
 
 
 // PROMISES  PROMISES  PROMISES  PROMISES  PROMISES  PROMISES  PROMISES 
-
 console.log('loading')
 
 setTimeout(()=>{
