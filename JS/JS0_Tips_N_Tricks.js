@@ -1285,3 +1285,74 @@ request1.addEventListener('load', () => {
         console.log('not found')
     }
 })
+
+
+
+
+// PROMISES  PROMISES  PROMISES  PROMISES  PROMISES  PROMISES  PROMISES 
+
+console.log('loading')
+
+setTimeout(()=>{
+    console.log('ready...')
+
+
+    setTimeout(()=>{
+        console.log('steady...')
+
+
+        setTimeout(()=>{
+
+
+            console.log('go!')
+        }, 1000)
+    }, 1000)
+}, 1000)
+
+
+const startPromise = new Promise(function(resolve, reject){
+    setTimeout(()=>{
+        console.log('loading')
+        const promData = {a:'p-ready', b: 'p-steady', c:'GO!'}
+
+
+        resolve(promData)
+    }, 1000)
+}) 
+
+
+startPromise.then((pData) => {
+    //async code
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            pData.a = 'pA-ready'
+            pData.b = 'pB-steady'
+
+            console.log(pData.a)
+
+            resolve(pData)
+        },1000)
+    })
+}).then((data) => {
+    // sync code
+    console.log(data.b)
+    data.mod = 'modded'
+    return data
+}).then(dataIn => {
+    console.log(dataIn)
+}).catch(()=>{
+    console.log('err')
+}).finally(()=>{
+    console.log('fin')
+})
+
+
+// When i need all my promises is done and then do something
+Promise.all([myPromise1(1000), myPromise2(2000)]).then(()=>{
+    console.log('do something')
+})
+
+// When i need first fastest promise is done and then do something
+Promise.race([myPromise1(1000), myPromise2(2000)]).then(()=>{
+    console.log('do something')
+})
