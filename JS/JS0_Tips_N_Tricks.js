@@ -923,8 +923,10 @@ function range (start, end) {
 }
 
 function sum (array) {
-    return array.reduce((a,b) => a + b)
+    const unnecessaryDefaulStartValue = 5
+    return array.reduce((sum,current) => sum + current, unnecessaryDefaulStartValue)
 }
+console.log(sum([5,5,5,5]))
 
 
 
