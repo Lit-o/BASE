@@ -742,6 +742,45 @@ function validator(e) {
 validator('fdf55^%#')
 validator('fdf5')
 validator('fdf5 fdf')
+
+
+
+// const regExExample = /pattern/flags
+// flags - i => Register Free, g - find all, group, m - multiline
+const stringReg = 'abcf5678'
+const regExample = /cf5/ig
+
+console.log(stringReg.match(regExample))
+console.log(stringReg.search(regExample))
+
+const pass = ('Password...');
+console.log(pass.replace(/./g, '*'));
+// /./g - take all string, . - all string
+
+console.log(pass.replace(/\./g, '*'));
+// \. - exactly dot => Password***
+
+// pattern classes
+// . - all current string
+// \d - numbers, D - all not numbers
+// \w - letters, W - all not letters(with this W class 'abc123' ->'123' sees like letters)
+// \s - spaces
+
+
+console.log('12-02-2222'.replace(/-/g, ':'));
+console.log('12-02-2222'.replace(/-/g, '')); // remove
+
+
+const starWars = 'His name is R2D2';
+console.log(starWars.match(/\w\d\w\d/i));
+console.log(starWars.match(/\d/ig));
+console.log(starWars.match(/\W/ig));
+console.log(starWars.match(/\D/ig));
+
+
+const test = '200px'
+console.log(+test.replace(/\D/g, ''));
+// return only 200 as typeof 'Number'
 // ---------- REGEXP 
 
 
@@ -1429,3 +1468,26 @@ Promise.all([myPromise1(1000), myPromise2(2000)]).then(()=>{
 Promise.race([myPromise1(1000), myPromise2(2000)]).then(()=>{
     console.log('do something')
 })
+
+
+
+
+//localStorage ~5 Mb
+window.localStorage
+
+                     //key    value
+localStorage.setItem('name', 'Boris')
+// call method again with new Value rewrite 'name'
+
+localStorage.getItem('name')
+
+localStorage.removeItem('name')
+
+// clear all localStorage
+localStorage.clear()
+
+const serializedData = JSON.stringify({a: 5, b: 15})
+localStorage.setItem('data', serializedData)
+
+const data = JSON.parse(localStorage.getItem('data'))
+
