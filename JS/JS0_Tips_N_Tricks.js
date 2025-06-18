@@ -304,11 +304,22 @@ console.log(str3.slice(5))
 console.log(str3.slice(5, 10))
 console.log(str3.slice(-5, -2))
 
-
 // Big stringcut
 const bigString = '1234567891012abcd'
 const bigStringCut = `${bigString.slice(0,7)}...`
 console.log(bigStringCut)
+
+
+// replace
+const strRep = '123 px'
+console.log(strRep.replace('3', '-'))
+console.log(strRep.replace(/\D/g, '-'))
+console.log(strRep.replace(/\W/g, '-'))
+console.log(strRep.replace(/\d/g, '-'))
+
+
+// split -> make array
+console.log(strRep.split(' '))
 
 
 // number to string
