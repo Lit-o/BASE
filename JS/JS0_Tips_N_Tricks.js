@@ -384,6 +384,7 @@ console.log(Object.values(objTip))
 // working like for .. in, but for .. in can return proto keys and values
 
 console.log(Object.entries(objTip))
+console.log(Object.fromEntries(objTip))
 // retunr array like -> [['key1','value1'],['key2','value2']]
 
 
@@ -1336,6 +1337,29 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
     .then(data => console.log(data))
 
 
+fetch('http://localhost:3000/posts')
+    .then(response => response.json())
+    .then(data => console.log(data))
+
+
+// Async/await ES8
+async function callServer (url, data) {
+    const response = await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify({data:`${data} info`}),
+        headers: {
+            'Content-type': 'application/json',
+        }
+    })
+
+    return await response.json()
+}
+
+// custom error
+
+if(!someReq.ok) {
+    throw new Error(`Error status ${someReq.status}`)
+}
 
 
 
