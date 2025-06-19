@@ -325,10 +325,18 @@ console.log(strRep.split(' '))
 console.log(strRep.join('-'))
 
 
+
+
 // number to string
 let strNumber = 123
 strNumber += ''
 console.log(typeof(strNumber))
+
+// array with concatination transform to string
+console.log(typeof(['G0',2, true] + ''))
+console.log(typeof([''] + ''))
+console.log(typeof([] + ''))
+
 
 let trimedText = '   Wake .  '
 console.log(trimedText)
