@@ -1502,3 +1502,34 @@ localStorage.setItem('data', serializedData)
 
 const data = JSON.parse(localStorage.getItem('data'))
 
+
+
+
+// Errors
+{
+    try {
+        console.log('start')
+        // console.lg('continue')
+        if ('syntaxSectionTwoSomeError') throw new SyntaxError(`some error into section ${2}`)
+        console.log('fin')
+    } 
+    catch (e) {
+        if (e.name === 'SyntaxError'){
+            console.log('Error is =>', e)
+            console.log('err name', e.name)
+            console.log('err message', e.message)
+            console.log('err stack', e.stack)
+        } else throw e
+            // if error not custom, throw upward
+            
+    } finally {
+        console.log('finally')
+    }
+
+    console.log('code run/execution continues after error with help by try/catch')
+
+    //custom errors
+    if ('sectionTwoSomeError') throw new Error(`some error into section ${2}`)
+    // have some different types of error
+    if ('syntaxSectionTwoSomeError') throw new SyntaxError(`some error into section ${2}`)
+}
