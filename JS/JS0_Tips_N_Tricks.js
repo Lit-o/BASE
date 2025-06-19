@@ -318,8 +318,11 @@ console.log(strRep.replace(/\W/g, '-'))
 console.log(strRep.replace(/\d/g, '-'))
 
 
-// split -> make array
+// split -> make array from string
 console.log(strRep.split(' '))
+
+// join -> make string from array
+console.log(strRep.join('-'))
 
 
 // number to string
