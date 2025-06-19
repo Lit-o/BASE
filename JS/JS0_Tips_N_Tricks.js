@@ -1533,3 +1533,25 @@ const data = JSON.parse(localStorage.getItem('data'))
     // have some different types of error
     if ('syntaxSectionTwoSomeError') throw new SyntaxError(`some error into section ${2}`)
 }
+
+
+
+
+// EVENT LOOP EVENT LOOP EVENT LOOP EVENT LOOP EVENT LOOP 
+// Async
+// stack, event loop, web api,
+// Executed Sync - first, async - second, async may be MICRO or MACRO
+
+setTimeout(()=>console.log('set timeout'))
+
+Promise.resolve().then(()=> console.log('promise'))
+
+queueMicrotask(()=>console.log('micro'))
+
+console.log('sync')
+
+// sync -> promise -> set timeout
+// .then().catch().finally() await -> microTask (queueMicrotask(()=>{})
+
+// MACRO 
+// setTimeout, setInterval, setImmediate (Node.js), I/O, UI rendering, events (click, load и т.д.).
