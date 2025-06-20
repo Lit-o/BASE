@@ -158,6 +158,7 @@ console.log(switchResult(15))
 
 // ---------- FUNCTIONS FUNCTIONS FUNCTIONS FUNCTIONS FUNCTIONS 
 
+// 3 way of function definitons 
 //Function Declaration (Hosting)
 function wakeUp1 () {
     return 'Neo...'
@@ -1573,12 +1574,12 @@ console.log('sync')
 setTimeout(() => console.log("Timeout 1"), 0); // MACRO
 
 Promise.resolve()
-  .then(() => {
-    console.log("Promise 1");
-    setTimeout(() => console.log("Timeout 2"), 0); // MACRO into MICRO
-    queueMicrotask(() => console.log("queueMicrotask")); // MICRO into MICRO
-  })
-  .then(() => console.log("Promise 2"));
+    .then(() => {
+        console.log("Promise 1");
+        setTimeout(() => console.log("Timeout 2"), 0); // MACRO into MICRO
+        queueMicrotask(() => console.log("queueMicrotask")); // MICRO into MICRO
+    })
+    .then(() => console.log("Promise 2"));
 
 setTimeout(() => console.log("Timeout 3"), 0); // MACRO
 
