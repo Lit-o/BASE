@@ -159,6 +159,8 @@ console.log(switchResult(15))
 // ---------- FUNCTIONS FUNCTIONS FUNCTIONS FUNCTIONS FUNCTIONS 
 
 // 3 way of function definitons 
+// then we need function call
+
 //Function Declaration (Hosting)
 function wakeUp1 () {
     return 'Neo...'
