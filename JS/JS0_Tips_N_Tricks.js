@@ -1593,3 +1593,140 @@ setTimeout(() => console.log("Timeout 3"), 0); // MACRO
 // Timeout 2
 
 // ! Promise must be Resolve !
+
+
+
+{   
+    console.log("SYNC top")
+    setTimeout(() => console.log("Timeout top, (MACRO), 0ms"), 0)
+    setTimeout(() => console.log("Timeout top, (MACRO), 1000ms"), 1000)
+
+
+    // Promise-Chain-I
+    Promise.resolve()
+        .then(() => {
+            console.log("Sync, into Promise-I, (MICRO), deep-1")
+
+            setTimeout(() => {
+                console.log("Timeout, into Promise-I, (MACRO), deep-1, 1000ms")
+            }, 1000)
+            setTimeout(() => {
+                console.log("Timeout, into Promise-I, (MACRO), deep-1, 0ms")
+            }, 0)
+
+    // queueMicrotask          
+    queueMicrotask(() => 
+        console.log("queueMicrotask")) // MICRO into MICRO
+    }).then(() => console.log("queueMicrotask then"))
+
+    // Promise-Chain-II
+    Promise.resolve()
+        .then(() => {
+            console.log("Sync, into Promise-II, (MICRO), deep-1")
+
+            Promise.resolve()
+                .then(() => {
+                    console.log("Sync, into Promise-II, (MICRO), deep-2")
+
+                    Promise.resolve()
+                        .then(()=>{
+                            console.log("Sync, into Promise-II, (MICRO), deep-3")
+
+                            setTimeout(() => {
+                                console.log("Timeout, into Promise-II, (MACRO), deep-3, 1000ms")
+                                }, 1000)
+                            setTimeout(() => {
+                                console.log("Timeout, into Promise-II, (MACRO), deep-3, 0ms")
+                                }, 0)
+                        })
+
+                    setTimeout(() => {
+                        console.log("Timeout, into Promise-II, (MACRO), deep-2, 1000ms")
+                        }, 1000)
+                    setTimeout(() => {
+                        console.log("Timeout, into Promise-II, (MACRO), deep-2, 0ms")
+                        }, 0)
+
+                })
+
+            setTimeout(()=>{
+                console.log("Timeout, into Promise-II, (MACRO), deep-1, 0ms")
+            }, 0)
+            setTimeout(()=>{
+                console.log("Timeout, into Promise-II, (MACRO), deep-1, 1000ms")
+            }, 1000)
+        })
+
+
+    // Promise-III
+    Promise.reject()
+        .then(() => {
+            console.log("[reject then] Sync, into Promise-III, (MICRO), deep-1")
+
+            setTimeout(() => {
+                console.log("[reject then] Timeout, into Promise-III, (MACRO), deep-1, 1000ms")
+            }, 1000)
+        })
+        .catch(()=>{
+            console.log("[reject catch] Sync, into Promise-III, (MICRO), deep-1")
+
+            setTimeout(() => {
+                console.log("[reject catch] Timeout, into Promise-III, (MACRO), deep-1, 1000ms")
+            }, 1000)
+            setTimeout(() => {
+                console.log(" [reject catch] Timeout, into Promise-III, (MACRO), deep-1, 0ms")
+            }, 0) 
+        })
+        .finally(()=>{
+            console.log("[reject finally] Sync, into Promise-III, (MICRO), deep-1")
+
+            setTimeout(() => {
+                console.log("[reject finally] Timeout, into Promise-III, (MACRO), deep-1, 0ms")
+            }, 0) 
+        })   
+
+    // Promise-IV
+    Promise.resolve()
+        .then(()=>{console.log('Promise-IV then-1')})
+        .then(()=>{console.log('Promise-IV then-2')})
+        .then(()=>{console.log('Promise-IV then-3')})
+        .then(()=>{console.log('Promise-IV then-4')})
+        .finally(()=>{console.log('Promise-IV finally')})
+
+
+
+    setTimeout(() => console.log("Timeout bottom, (MACRO)"), 0) // MACRO
+    console.log("SYNC bottom") // SYNC
+
+    
+    // SYNC top
+    // SYNC bottom
+    // Sync, into Promise-I, (MICRO), deep-1
+    // Sync, into Promise-II, (MICRO), deep-1
+    // Promise-IV then-1
+    // queueMicrotask
+    // queueMicrotask then
+    // Sync, into Promise-II, (MICRO), deep-2
+    // [reject catch] Sync, into Promise-III, (MICRO), deep-1
+    // Promise-IV then-2
+    // Sync, into Promise-II, (MICRO), deep-3
+    // [reject finally] Sync, into Promise-III, (MICRO), deep-1
+    // Promise-IV then-3
+    // Promise-IV then-4
+    // Promise-IV finally
+    // Timeout top, (MACRO), 0ms
+    // Timeout bottom, (MACRO)
+    // Timeout, into Promise-I, (MACRO), deep-1, 0ms
+    // Timeout, into Promise-II, (MACRO), deep-1, 0ms
+    // Timeout, into Promise-II, (MACRO), deep-2, 0ms
+    //  [reject catch] Timeout, into Promise-III, (MACRO), deep-1, 0ms
+    // Timeout, into Promise-II, (MACRO), deep-3, 0ms
+    // [reject finally] Timeout, into Promise-III, (MACRO), deep-1, 0ms
+    // Timeout top, (MACRO), 1000ms
+    // Timeout, into Promise-I, (MACRO), deep-1, 1000ms
+    // Timeout, into Promise-II, (MACRO), deep-1, 1000ms
+    // Timeout, into Promise-II, (MACRO), deep-2, 1000ms
+    // [reject catch] Timeout, into Promise-III, (MACRO), deep-1, 1000ms
+    // Timeout, into Promise-II, (MACRO), deep-3, 1000ms
+ 
+}
