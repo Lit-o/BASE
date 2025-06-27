@@ -9,7 +9,7 @@ Developer declarate how Compo looks like when app state changes, React recall an
 
 #### States  <br>
 
-#### Props  <br>
+#### Props  (props read only)<br> 
 ```
     const User = ({id, name}) => {
         return <h1>User id - {id}, user name - {name}</h1>
