@@ -10,6 +10,30 @@ Developer declarate how Compo looks like when app state changes, React recall an
 #### States  </br>
 
 #### Props  </br>
+```
+    const User = ({id, name}) => {
+        return <h1>User id - {id}, user name - {name}</h1>
+    }
+    const Surname = (props) => {
+        return (
+            <div>
+                <h2>User surname - {props.surname}</h2>
+                <button onClick={props.wake}>Wake up, Neo</button>
+            </div>
+        ) 
+    }
+    const App = () => {
+        const neo = {surname: 'Anderson'}
+        const wakeUp = () => {console.log('The Matrix has you...')}
+
+        return (
+            <div>
+                <User id={5} name='Neo'/>
+                <Surname surname={neo.surname} wake={wakeUp}/>
+            </div>
+        )
+    }
+```
 
 #### React reconciliation algorithm 
 The process by which React efficiently updates(re-renders) the UI in response to changes in a component's state or props. This process leverages a Virtual DOM or React VDOM (vs NATIVE DOM which is heavy and slow) to minimize direct manipulation of the actual DOM, which is a costly operation.</br>
