@@ -96,5 +96,25 @@ a function that takes outer props or/and has its own state and returns JSX
             </>
         )
     }
+```
+</br>
 
+#### .map()
+```
+    ...
+    const elems = data.map(item => {
+        return (
+            <li>
+                <SomeItemCompoAll {...item}>
+                <SomeItemCompoName name={item.name}>
+            </li>
+        )
+    })
+
+    retutn (
+        <ul>
+            {elems}
+        </ul>
+    )
+    ...
 ```
