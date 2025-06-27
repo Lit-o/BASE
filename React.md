@@ -1,15 +1,15 @@
 # Keywords
-SPA  </br>
+SPA  <br>
 
 #### Components 
-Functions, that calls and recalls by React lib. OOP by Compo composition wellcome  </br>
+Functions, that calls and recalls by React lib. OOP by Compo composition wellcome  <br>
 
 #### Declarative 
-Developer declarate how Compo looks like when app state changes, React recall and rerender compos by self  </br>
+Developer declarate how Compo looks like when app state changes, React recall and rerender compos by self  <br>
 
-#### States  </br>
+#### States  <br>
 
-#### Props  </br>
+#### Props  <br>
 ```
     const User = ({id, name}) => {
         return <h1>User id - {id}, user name - {name}</h1>
@@ -36,10 +36,10 @@ Developer declarate how Compo looks like when app state changes, React recall an
 ```
 
 #### React reconciliation algorithm 
-The process by which React efficiently updates(re-renders) the UI in response to changes in a component's state or props. This process leverages a Virtual DOM or React VDOM (vs NATIVE DOM which is heavy and slow) to minimize direct manipulation of the actual DOM, which is a costly operation.</br>
+The process by which React efficiently updates(re-renders) the UI in response to changes in a component's state or props. This process leverages a Virtual DOM or React VDOM (vs NATIVE DOM which is heavy and slow) to minimize direct manipulation of the actual DOM, which is a costly operation.<br>
 
 #### JSX 
-(JS into html)  </br>
+(JS into html)  <br>
 
 #### React elem
 ```
@@ -60,7 +60,7 @@ const elem = (
     </div>
 )
 ```  
-</br>
+<br>
 
 #### React Compo
 a function that takes outer props or/and has its own state and returns JSX
@@ -97,7 +97,7 @@ a function that takes outer props or/and has its own state and returns JSX
         )
     }
 ```
-</br>
+<br>
 
 #### .map()
 ```
@@ -117,4 +117,13 @@ a function that takes outer props or/and has its own state and returns JSX
         </ul>
     )
     ...
+```
+<br>
+
+#### dyn className 
+```
+    let classNames = 'start beautiful'
+    if (active) {
+        className += ' active'
+    } 
 ```
