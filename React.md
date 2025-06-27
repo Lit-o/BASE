@@ -103,10 +103,11 @@ a function that takes outer props or/and has its own state and returns JSX
 ```
     ...
     const elems = data.map(item => {
+        const {id, ...otherItemProps} = item
         return (
             <li>
-                <SomeItemCompoAll {...item}>
-                <SomeItemCompoName name={item.name}>
+                <SomeItemCompoAll key={id} {...otherItemProps}>
+                <SomeItemCompoName key={id} name={item.name} {...item}>
             </li>
         )
     })
