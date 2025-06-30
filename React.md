@@ -9,7 +9,7 @@ Developer declarate how Compo looks like when app state changes, React recall an
 
 #### States  <br>
 
-#### Props  (props read only)<br> 
+#### Props (props read only)  <br> 
 ```
     const User = ({id, name}) => {
         return <h1>User id - {id}, user name - {name}</h1>
@@ -41,7 +41,7 @@ The process by which React efficiently updates(re-renders) the UI in response to
 #### JSX 
 (JS into html)  <br>
 
-#### React elem
+#### React elem (JSX)
 ```
 const elemText = 'Elem'
 
