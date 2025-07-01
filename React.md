@@ -154,6 +154,15 @@ a function that takes outer props or/and has its own state and returns JSX
         </ul>
     )
     ...
+
+    const someTemplateForMap = (el) => {
+        return {
+            name: el.n,
+            id: el.id,
+            color: el.c
+        }
+    }
+    data.map(someTemplateForMap)
 ```
 <br>
 
@@ -201,4 +210,11 @@ a function that takes outer props or/and has its own state and returns JSX
         )
     }
 ...
+```
+
+#### Imports
+```
+    import customImage from "../../images/img1.png"
+...
+    <img src={customImage} alt="Description about image" className="smImg"/>
 ```
