@@ -18,6 +18,15 @@ const obj = {
 }
 let l='La ',v='Vida'
 
+let nP = 'new' + 'CreatedOnFly' + 'Prop'
+
+const newImmutObj = {
+    ...obj,
+    [nP]: obj[l + v]
+}
+console.log(newImmutObj)
+
+
 console.log(obj.Viva)
 console.log(obj['La Vida'])
 console.log(obj[l + v])
