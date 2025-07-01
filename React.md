@@ -218,3 +218,21 @@ a function that takes outer props or/and has its own state and returns JSX
 ...
     <img src={customImage} alt="Description about image" className="smImg"/>
 ```
+
+#### Condition render (one of the ways)
+```
+
+const skeleton = contern || loading || error ? null : <Skeleton />
+const errorMessage = error ? <ErrorComponent> : null
+const spinner = loading ? <Spinner /> : null
+const content = !(loading || error) ? <TargetComponentComponent data={data}> : null
+
+return (
+    <>
+        {skeleton}
+        {errorMessage}
+        {spinner}
+        {content}
+    </>
+)
+```
