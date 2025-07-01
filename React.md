@@ -8,6 +8,31 @@ Functions, that calls and recalls by React lib. OOP by Compo composition wellcom
 Developer declarate how Compo looks like when app state changes, React recall and rerender compos by self  <br>
 
 #### States  <br>
+```
+...
+
+setSomeState((state) => {
+    const targetIndex = state.findIndex(elem => elem.id === targetId)
+
+    const oldElem = state[targetIndex]
+    const newElem = {...oldElem, isUpdate: !oldElem.isUpdate}
+
+    const newImmutableState = [...state.slice(0, targetIndex), newElem, ...state.slice(targetIndex + 1)]
+    return newImmutableState
+
+    //map alternative
+
+    return state.map(el=>{
+        if (el.id === target.id) {
+            return  {...el, isUpdate: !oldElem.isUpdate}
+        }
+        return el
+    })
+})
+
+...
+```
+<br>
 
 #### Props (props read only)  <br> 
 ```
