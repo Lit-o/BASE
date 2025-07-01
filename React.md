@@ -31,6 +31,12 @@ setSomeState((state) => {
 })
 
 ...
+
+    return data.filter(el => {
+        return data.desc.indexOf(matchWithSearchText) > -1
+    })
+
+...
 ```
 <br>
 
@@ -65,6 +71,11 @@ The process by which React efficiently updates(re-renders) the UI in response to
 
 #### JSX 
 (JS into html)  <br>
+one parent (at least fragment <> </>, or <React.Fragment key="1"> if keys needed)
+```
+<h1>{some && operations ? 'one' : another + data || defaultValue}</h1>
+```
+
 
 #### React elem (JSX)
 ```
