@@ -164,3 +164,41 @@ a function that takes outer props or/and has its own state and returns JSX
         className += ' active'
     } 
 ```
+
+
+#### Naming
+```
+    const [data, setData] = useState('"set..." Something, get by just name')
+
+    const onButtonPress = () => {console.log('"on..." Something that User manually activate')}
+
+    const _markAsReadOnly = 'declare a pseudo Constant to other developers'
+```
+
+#### Styles
+##### Inline Styles
+```
+    <p style={{
+        fontSize: 14,
+        width: "100%",
+    }}> Wake Up </p>
+
+    const neoStyle = isAwake ? {color: 'red'} : null
+    <p style={neoStyle}> Neo </p>
+```
+
+##### CSS SCSS 
+```
+// terminal
+// npm i sass
+
+...
+    import './sass-styled-item.scss'
+
+    const App = () => {
+        return (
+            <h1 className='sass-styled-item_h1'>Wake Up</h1>
+        )
+    }
+...
+```
