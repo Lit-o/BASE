@@ -251,8 +251,8 @@ return (
     <CompoParent2 classN="beauty">
         <p>Some dynamic content</p>
     </CompoParent2>
-...
 
+...
 //alternative
         const CompoParentAlt = (props) => {
         return (
@@ -263,4 +263,8 @@ return (
             </div>
         )
     }
+
+...
+//Compo as props
+    <ParentCompo left={<p>Left Elem</p>} right={<RightCompo>}>
 ```
