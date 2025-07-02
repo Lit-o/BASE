@@ -236,3 +236,31 @@ return (
     </>
 )
 ```
+
+
+#### props.children
+```
+    const CompoParent = (props) => {
+        return (
+            <div className={props.classN}>
+                {props.children}
+            </div>
+        )
+    }
+
+    <CompoParent2 classN="beauty">
+        <p>Some dynamic content</p>
+    </CompoParent2>
+...
+
+//alternative
+        const CompoParentAlt = (props) => {
+        return (
+            <div className={props.classN}>
+                React.Children.map(props.children, (item) => {
+                    return React.cloneElement(item, {className: "addedCustomClass"})
+                })
+            </div>
+        )
+    }
+```
