@@ -31,6 +31,12 @@ setSomeState((state) => {
 })
 
 ...
+
+    return data.filter(el => {
+        return data.desc.indexOf(matchWithSearchText) > -1
+    })
+
+...
 ```
 <br>
 
@@ -65,6 +71,11 @@ The process by which React efficiently updates(re-renders) the UI in response to
 
 #### JSX 
 (JS into html)  <br>
+one parent (at least fragment <> </>, or <React.Fragment key="1"> if keys needed)
+```
+<h1>{some && operations ? 'one' : another + data || defaultValue}</h1>
+```
+
 
 #### React elem (JSX)
 ```
@@ -143,6 +154,15 @@ a function that takes outer props or/and has its own state and returns JSX
         </ul>
     )
     ...
+
+    const someTemplateForMap = (el) => {
+        return {
+            name: el.n,
+            id: el.id,
+            color: el.c
+        }
+    }
+    data.map(someTemplateForMap)
 ```
 <br>
 
@@ -152,4 +172,67 @@ a function that takes outer props or/and has its own state and returns JSX
     if (active) {
         className += ' active'
     } 
+```
+
+
+#### Naming
+```
+    const [data, setData] = useState('"set..." Something, get by just name')
+
+    const onButtonPress = () => {console.log('"on..." Something that User manually activate')}
+
+    const _markAsReadOnly = 'declare a pseudo Constant to other developers'
+```
+
+#### Styles
+##### Inline Styles
+```
+    <p style={{
+        fontSize: 14,
+        width: "100%",
+    }}> Wake Up </p>
+
+    const neoStyle = isAwake ? {color: 'red'} : null
+    <p style={neoStyle}> Neo </p>
+```
+
+##### CSS SCSS 
+```
+// terminal
+// npm i sass
+
+...
+    import './sass-styled-item.scss'
+
+    const App = () => {
+        return (
+            <h1 className='sass-styled-item_h1'>Wake Up</h1>
+        )
+    }
+...
+```
+
+#### Imports
+```
+    import customImage from "../../images/img1.png"
+...
+    <img src={customImage} alt="Description about image" className="smImg"/>
+```
+
+#### Condition render (one of the ways)
+```
+
+const skeleton = contern || loading || error ? null : <Skeleton />
+const errorMessage = error ? <ErrorComponent> : null
+const spinner = loading ? <Spinner /> : null
+const content = !(loading || error) ? <TargetComponentComponent data={data}> : null
+
+return (
+    <>
+        {skeleton}
+        {errorMessage}
+        {spinner}
+        {content}
+    </>
+)
 ```
