@@ -387,3 +387,32 @@ re-calculations of complex values or re-creation of reference types
     </li>
 
 ```
+
+##### Custom Hooks (many resources on the internet with examples of useful ones)
+```jsx
+    function useIncDec (initialValue) => {
+        const [count, setCount] = useState(initialValue)
+
+        const inc = () => {
+            setCount(prevCount => prevCount + 1)
+        }
+
+        const dec = () => {
+            setCount(prevCount => prevCount - 1)
+        }
+        
+        return {count, inc, dec}
+    }
+
+    const App = () => {
+        const counter1 = useIncDec(0)
+        const counter2 = useIncDec(5)
+
+        useEffect(()=>{
+            counter1.inc()
+        },[])
+
+
+        return <h2>{counter1.count} Wake up {counter2.count}</h2>
+    }
+```
