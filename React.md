@@ -268,3 +268,122 @@ return (
 //Compo as props
     <ParentCompo left={<p>Left Elem</p>} right={<RightCompo>}>
 ```
+
+
+
+#### HOOKs
+##### 2 main terms of use: <br>
+1) HOOKs call only on top level of Component. Does't allow into other functions, loops, conditions
+2) HOOKs call only into and from functional Component
+
+##### useState
+```
+
+    const [state, setState] = useState({a: 'initial data', b: 5})
+    const [toggle, setToggle] = useState(true)
+
+    function removeData = (a) {
+        setState({})
+    }
+
+    function changeData = (arg) {
+        setState(state => ({...state, a: arg}))
+    }
+
+    setToggle(toggle => !toggle)
+
+    ...
+
+    function calculated () {return 2 + 3}
+    
+    const App = (props) => {
+        const [calcState, setCalcState] = useState(calculated)
+        //or
+        const [calcState, setCalcState] = useState(() => calculated())
+        // calculated calls one time when Compo mount
+
+
+        const [calcState, setCalcState] = useState(calculated())
+        // calculated calls every time when Compo changes
+
+    }
+
+```
+
+##### useEffect
+can use several useEffect in one Compo if needed
+
+```
+useEffect(() => {
+    activateSomeAsyncOrEffect()
+}, [])
+// componentDidMount like - one call when Compo mount only
+
+useEffect(() => {
+    activateSomeAsyncOrEffectStateDepending()
+}, [state])
+
+
+useEffect(() => {
+    activateSomeAsyncOrEffectStateDepending()
+
+    return () => {
+        unfollowFromListenersBeforeCompoWillUnmount()
+        clearTimersOrIntervals()
+    }
+}, [state])
+//componentWillUnmount
+```
+
+##### useCallback (memoized function link)
+separate re-create/re-call function from re-render
+make sense when memoized function send to child Compo with props, 
+so child doesn't think this function is new every Parent Compo re-render, 
+and don't unnecessary re-render self
+```
+    const separateFlowFunction = useCallback(()=>{...some...}, [])
+
+    const separateFlowFunction = useCallback(()=>{...some...}, [reasonOfChange])
+```
+
+##### useMemo (memoized result of function with heavy Expensive calculate)
+it is generally not recommended to memoize primitive values.
+Primitive values are inherently cheap to create and compare. 
+The primary purpose of useMemo is to prevent expensive 
+re-calculations of complex values or re-creation of reference types 
+(like objects and arrays) that could trigger unnecessary re-renders of child components. 
+```
+    const calculated = useMemo(()=>{
+        return heavyCalculate() + 5
+        // sideEffects are not allowed 
+    },[])
+```
+
+
+##### useRef (React render flow limbo-data)
+```
+    const someRef = useRef('custom initial data')
+
+    const focusInput = () => {
+        someRef.current.focus()
+    }
+    <input ref={someRef} />
+
+...
+    // when actions needed but re-render not
+    const countRef = useRef(1)
+
+    const inctRef = () => {
+        countRef.current + 1
+    }
+...
+    // callback ref case
+    const itemsRef = useRef([])
+
+    <li
+        ref={liSelfElem => itemRefs.current[i] = liSelfElem}
+    >
+        element
+    </li>
+
+```
