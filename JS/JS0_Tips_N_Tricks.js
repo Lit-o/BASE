@@ -160,6 +160,11 @@ let switchResult = (switchTip) => {
     } 
 }
 console.log(switchResult(15))
+
+// JS ternary operator
+const dataConditioned = true ? 'yes!' : null
+true ? callSomeCusomAcceptedFunc() : callSomeCusomRejectedFunc()
+
 // ---------- END - LOOPS & CONDITIONS 
 
 
