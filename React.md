@@ -418,3 +418,19 @@ re-calculations of complex values or re-creation of reference types
         return <h2>{counter1.count} Wake up {counter2.count}</h2>
     }
 ```
+
+
+
+#### batching
+combining several state changes into one render by React
+
+prevent batching React 18 for separate render for each operation if for some reason it's needed 
+```jsx
+import {flushSync} from 'react'
+...
+setTimeout(() => {
+    flushSync(()=>{
+        console.log('custom operation that wants its own render tik')
+    })
+}, 4)
+```
