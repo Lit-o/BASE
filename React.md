@@ -434,3 +434,9 @@ setTimeout(() => {
     })
 }, 4)
 ```
+
+#### R18 optimisation hooks
+when huge(HUGE) list re-calculated and re-rendered
+useTransition
+useDeferredValue
+in two(four) words - controlled custom render microdelay 
