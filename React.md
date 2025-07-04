@@ -269,6 +269,8 @@ return (
     <ParentCompo left={<p>Left Elem</p>} right={<RightCompo>}>
 ```
 
+#### npm i react-error-boundary for ErrorBoundary in functional Compo
+
 
 
 #### HOOKs
