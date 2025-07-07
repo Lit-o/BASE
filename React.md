@@ -443,5 +443,49 @@ in two(four) words - controlled custom render microdelay
 
 
 #### React.lazy
+js chunk optimisation
 
-#### React.memo
+
+#### React.memo (props changes optimisation)
+Render optimisation for Compo-child changes by outer props
+By default prevProps and currentProps match checked with shallow data
+
+React.memo is a higher-order component (HOC) in React used for performance optimization. It memoizes a functional component, meaning React will skip re-rendering that component if its props have not changed since the last render.
+
+##### Prop comparison:
+By default, React.memo performs a shallow comparison of the component's props. If all the new props are strictly equal (using Object.is) to the old props, React will reuse the last rendered output instead of re-rendering the component.
+##### Custom comparison:
+You can provide a custom comparison function as a second argument to React.memo if the default shallow comparison is not sufficient (e.g., for deep comparison of complex objects or functions). This function receives prevProps and nextProps and should return true if the props are equal (meaning no re-render is needed) and false otherwise.
+##### When to use React.memo:
+Pure functional components: Components that always render the same output given the same props.
+Performance bottlenecks: When a component re-renders frequently due to parent component updates, but its own props rarely change, leading to unnecessary re-renders and performance issues.
+##### Important considerations:
+React.memo only prevents re-renders based on prop changes. If a component wrapped in React.memo uses useState, useReducer, or useContext, it will still re-render if its internal state or context changes.
+Overuse of React.memo can sometimes introduce more overhead than the performance benefits it provides, especially for simple components or components with frequently changing props. It's best used strategically after identifying performance bottlenecks.
+
+##### How it works:
+Wrapping a component: You wrap a functional component with React.memo like this:
+```jsx
+    const MyComponent = React.memo(function MyComponent(props) {
+      // ... component logic
+      return <div>{props.value}</div>;
+    });
+```
+
+```jsx
+    function areEqual = (prevProps, nextProps) => {
+        // return true if the equal and re-render doesn't needed
+        // or return false and re-render calls
+        return prevProps.customData.deepName === nextProps.customData.deepName && prevProps.customData.id === nextProps.customData.id
+    } 
+    const MyComponent = React.memo(myChildåCompo, areEqual);
+```
+
+example: when every second the server is called and actual data is requested, and this data matches to current data, and re-render doesn't needed
+
+
+
+#### useContext
+
+
+#### useReducer (advanced useState)
