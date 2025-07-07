@@ -489,3 +489,37 @@ example: when every second the server is called and actual data is requested, an
 
 
 #### useReducer (advanced useState)
+```jsx
+import React from 'react'
+
+function reducer  (state, action) {
+    switch (action.type) {
+        case 'inc':
+            return {
+                    ...state,
+                    count: state.count + 1 
+                }
+        case 'dec':
+                return {
+                    ...state,
+                    count: state.count - 1 
+                }
+        default: 
+            return state
+    }
+}
+
+export default function Calculator ()  {
+    const initData =  Number.parseFloat('1.12 initial Data')
+    const [count, dispatch] = React.useReducer(reducer, {count: initData})
+
+
+    return (
+        <div>
+            <button onClick={()=>{dispatch({type:'inc'})}}> +++ </button>
+            <button onClick={()=>{dispatch({type:'dec'})}}> --- </button>
+            <p>result = {count.count}</p>
+        </div>
+    )
+}
+```
