@@ -8,7 +8,7 @@ Functions, that calls and recalls by React lib. OOP by Compo composition wellcom
 Developer declarate how Compo looks like when app state changes, React recall and rerender compos by self  <br>
 
 #### States  <br>
-```
+```js
 ...
 
 setSomeState((state) => {
@@ -41,7 +41,7 @@ setSomeState((state) => {
 <br>
 
 #### Props (props read only)  <br> 
-```
+```jsx
     const User = ({id, name}) => {
         return <h1>User id - {id}, user name - {name}</h1>
     }
@@ -72,13 +72,13 @@ The process by which React efficiently updates(re-renders) the UI in response to
 #### JSX 
 (JS into html)  <br>
 one parent (at least fragment <> </>, or <React.Fragment key="1"> if keys needed)
-```
+```jsx
 <h1>{some && operations ? 'one' : another + data || defaultValue}</h1>
 ```
 
 
 #### React elem (JSX)
-```
+```jsx
 const elemText = 'Elem'
 
 const elemDoesntCustomChange = 'but re-rendered' + '(ref, not now, your time will come)'
@@ -101,7 +101,7 @@ const elem = (
 #### React Compo
 a function that takes outer props or/and has its own state and returns JSX
 
-```
+```jsx
     const Footer = () => {
         const isThisTheEnd = true
         return <h4>{isThisTheEnd ? 'Footer text' : 'Not end yet'}</h4>
@@ -136,7 +136,7 @@ a function that takes outer props or/and has its own state and returns JSX
 <br>
 
 #### .map()
-```
+```jsx
     ...
     const elems = data.map(item => {
         const {id, ...otherItemProps} = item
@@ -148,7 +148,7 @@ a function that takes outer props or/and has its own state and returns JSX
         )
     })
 
-    retutn (
+    return (
         <ul>
             {elems}
         </ul>
@@ -167,7 +167,7 @@ a function that takes outer props or/and has its own state and returns JSX
 <br>
 
 #### dyn className 
-```
+```js
     let classNames = 'start beautiful'
     if (active) {
         className += ' active'
@@ -176,7 +176,7 @@ a function that takes outer props or/and has its own state and returns JSX
 
 
 #### Naming
-```
+```js
     const [data, setData] = useState('"set..." Something, get by just name')
 
     const onButtonPress = () => {console.log('"on..." Something that User manually activate')}
@@ -186,7 +186,7 @@ a function that takes outer props or/and has its own state and returns JSX
 
 #### Styles
 ##### Inline Styles
-```
+```jsx
     <p style={{
         fontSize: 14,
         width: "100%",
@@ -197,7 +197,7 @@ a function that takes outer props or/and has its own state and returns JSX
 ```
 
 ##### CSS SCSS 
-```
+```jsx
 // terminal
 // npm i sass
 
@@ -213,14 +213,14 @@ a function that takes outer props or/and has its own state and returns JSX
 ```
 
 #### Imports
-```
+```jsx
     import customImage from "../../images/img1.png"
 ...
     <img src={customImage} alt="Description about image" className="smImg"/>
 ```
 
 #### Condition render (one of the ways)
-```
+```jsx
 
 const skeleton = contern || loading || error ? null : <Skeleton />
 const errorMessage = error ? <ErrorComponent> : null
@@ -239,7 +239,7 @@ return (
 
 
 #### props.children
-```
+```jsx
     const CompoParent = (props) => {
         return (
             <div className={props.classN}>
@@ -248,9 +248,9 @@ return (
         )
     }
 
-    <CompoParent2 classN="beauty">
+    <CompoParent classN="beauty">
         <p>Some dynamic content</p>
-    </CompoParent2>
+    </CompoParent>
 
 ...
 //alternative
@@ -279,7 +279,7 @@ return (
 2) HOOKs call only into and from functional Component
 
 ##### useState
-```
+```jsx
 
     const [state, setState] = useState({a: 'initial data', b: 5})
     const [toggle, setToggle] = useState(true)
@@ -315,7 +315,7 @@ return (
 ##### useEffect
 can use several useEffect in one Compo if needed
 
-```
+```jsx
 useEffect(() => {
     activateSomeAsyncOrEffect()
 }, [])
@@ -342,7 +342,7 @@ separate re-create/re-call function from re-render
 make sense when memoized function send to child Compo with props, 
 so child doesn't think this function is new every Parent Compo re-render, 
 and don't unnecessary re-render self
-```
+```jsx
     const separateFlowFunction = useCallback(()=>{...some...}, [])
 
     const separateFlowFunction = useCallback(()=>{...some...}, [reasonOfChange])
@@ -354,7 +354,7 @@ Primitive values are inherently cheap to create and compare.
 The primary purpose of useMemo is to prevent expensive 
 re-calculations of complex values or re-creation of reference types 
 (like objects and arrays) that could trigger unnecessary re-renders of child components. 
-```
+```jsx
     const calculated = useMemo(()=>{
         return heavyCalculate() + 5
         // sideEffects are not allowed 
@@ -363,7 +363,7 @@ re-calculations of complex values or re-creation of reference types
 
 
 ##### useRef (React render flow limbo-data)
-```
+```jsx
     const someRef = useRef('custom initial data')
 
     const focusInput = () => {
@@ -440,3 +440,8 @@ when huge(HUGE) list re-calculated and re-rendered
 useTransition
 useDeferredValue
 in two(four) words - controlled custom render microdelay 
+
+
+#### React.lazy
+
+#### React.memo
