@@ -523,3 +523,41 @@ export default function Calculator ()  {
     )
 }
 ```
+
+higher-order component
+#### HOC (higher-order component, (withSomething))
+```jsx
+    const withSomeOftenOneTypeLogic = (BaseComponent, getData) => {
+
+        return (props) => {
+            // some component logic
+            return <BaseComponent {...props} someData={getData.someData} moreInfo={moreInfo}>
+        }
+    }
+```
+
+```jsx
+    const withSomething => WrappedComponent => props => {
+        useEffect(()=>{
+            console.log('do something one time')
+        },[])
+
+        return <WrappedComponent {...props}/>
+    }
+
+
+    const InnerCompo = () => {
+        return (
+            <p>InnerCompo!</p>
+        )
+    }
+    const InnerCompoWithSomething = withSomething(InnerCompo)
+
+
+    const App = () => {
+        return (
+            <InnerCompoWithSomething wakeUp='Neo'>
+        )
+    }
+
+```
