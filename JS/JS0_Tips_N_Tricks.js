@@ -1744,3 +1744,20 @@ setTimeout(() => console.log("Timeout 3"), 0); // MACRO
     // Timeout, into Promise-II, (MACRO), deep-3, 1000ms
  
 }
+
+
+
+//Dynamic JS import
+
+export function logger () {
+    console.log('log')
+}
+
+// ...
+
+if(isTrue) {
+    import('./someOuterFunc')
+        .then(obj => obj.logger())
+}
+// or
+const {logger} = await import('./someOuterFunc')
