@@ -5,7 +5,7 @@ SPA  <br>
 Functions, that calls and recalls by React lib. OOP by Compo composition wellcome  <br>
 
 #### Declarative 
-Developer declarate how Compo looks like when app state changes, React recall and rerender compos by self  <br>
+Developer declarate/define how Compo looks like when app state changes, React recall and rerender compos by self  <br>
 
 #### States  <br>
 ```js
@@ -142,8 +142,8 @@ a function that takes outer props or/and has its own state and returns JSX
         const {id, ...otherItemProps} = item
         return (
             <li>
-                <SomeItemCompoAll key={id} {...otherItemProps}>
-                <SomeItemCompoName key={id} name={item.name} {...item}>
+                <SomeItemCompoAll key={id} {...otherItemProps}/>
+                <SomeItemCompoName key={id} name={item.name} {...item}/>
             </li>
         )
     })
@@ -182,6 +182,10 @@ a function that takes outer props or/and has its own state and returns JSX
     const onButtonPress = () => {console.log('"on..." Something that User manually activate')}
 
     const _markAsReadOnly = 'declare a pseudo Constant to other developers'
+
+    const withSomeHOC = 'higher-order component'
+
+    const useCustomHook = 'use other hooks and return custom obj or array with data and methods'
 ```
 
 #### Styles
@@ -219,13 +223,13 @@ a function that takes outer props or/and has its own state and returns JSX
     <img src={customImage} alt="Description about image" className="smImg"/>
 ```
 
-#### Condition render (one of the ways)
+#### Condition render 
+##### One of the ways
 ```jsx
-
 const skeleton = contern || loading || error ? null : <Skeleton />
-const errorMessage = error ? <ErrorComponent> : null
+const errorMessage = error ? <ErrorComponent /> : null
 const spinner = loading ? <Spinner /> : null
-const content = !(loading || error) ? <TargetComponentComponent data={data}> : null
+const content = !(loading || error) ? <TargetComponentComponent data={data} /> : null
 
 return (
     <>
@@ -235,6 +239,34 @@ return (
         {content}
     </>
 )
+```
+
+##### Another. FSM (finite-state machine or state machine(redux-like))
+```jsx
+const setActualContent = (processStatus, data) => {
+    switch (processStatus) {
+        case 'waiting':
+            return <Skeleton />
+        case 'loading':
+            return <Spinner />
+        case 'confirmed':
+            return <TargetComponentComponent data={data} />
+        case 'error':
+            return <ErrorComponent />
+        default:
+            throw new Error('Some issue') 
+
+    }
+}
+
+return (
+    <>
+        {setActualContent(state.status, state.data)}
+    </>
+)
+
+
+
 ```
 
 
@@ -524,11 +556,9 @@ export default function Calculator ()  {
 }
 ```
 
-higher-order component
 #### HOC (higher-order component, (withSomething))
 ```jsx
     const withSomeOftenOneTypeLogic = (BaseComponent, getData) => {
-
         return (props) => {
             // some component logic
             return <BaseComponent {...props} someData={getData.someData} moreInfo={moreInfo}>
