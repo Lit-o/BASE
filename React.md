@@ -264,9 +264,6 @@ return (
         {setActualContent(state.status, state.data)}
     </>
 )
-
-
-
 ```
 
 
@@ -289,9 +286,10 @@ return (
         const CompoParentAlt = (props) => {
         return (
             <div className={props.classN}>
-                React.Children.map(props.children, (item) => {
-                    return React.cloneElement(item, {className: "addedCustomClass"})
-                })
+                {
+                    React.Children.map(props.children, (item) => {
+                    return React.cloneElement(item, {className: "addedCustomClass"})})
+                }
             </div>
         )
     }
@@ -312,7 +310,6 @@ return (
 
 ##### useState
 ```jsx
-
     const [state, setState] = useState({a: 'initial data', b: 5})
     const [toggle, setToggle] = useState(true)
 
@@ -467,6 +464,8 @@ setTimeout(() => {
 }, 4)
 ```
 
+
+
 #### R18 optimisation hooks
 when huge(HUGE) list re-calculated and re-rendered
 useTransition
@@ -474,8 +473,10 @@ useDeferredValue
 in two(four) words - controlled custom render microdelay 
 
 
+
 #### React.lazy
 js chunk optimisation
+
 
 
 #### React.memo (props changes optimisation)
@@ -520,6 +521,7 @@ example: when every second the server is called and actual data is requested, an
 #### useContext
 
 
+
 #### useReducer (advanced useState)
 ```jsx
 import React from 'react'
@@ -555,6 +557,8 @@ export default function Calculator ()  {
     )
 }
 ```
+
+
 
 #### HOC (higher-order component, (withSomething))
 ```jsx
