@@ -314,3 +314,32 @@ function getProdGData ():APIResponseG<productG> {
         data: {id: 4, prodName: 'product'}
     }
 }
+
+
+
+
+// strange
+type per = {age:number, name: string}
+
+const logPer = (per:per) => {
+    console.log(per)
+}
+
+//id ERROR
+logPer({age: 15, name: 'Neo', id: 5})
+
+//id FINE
+const persone = {age: 15, name: 'Neo', id: 5}
+logPer(persone)
+// becouse structure language
+
+//id ERROR
+const persone2:per = {age: 15, name: 'Neo', id: 5}
+logPer(persone)
+
+const persone3:per = {
+    age: 15,
+    name: 'Neo', 
+    ...{id: 5}
+}
+logPer(persone)
