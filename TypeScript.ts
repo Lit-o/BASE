@@ -322,6 +322,24 @@ interface APIResponseGM<T, K> {
     moreData?: K
 }
 
+const ObjGM:APIResponseGM<userG, {objText: string}> = {
+    id:4,
+    status: 'success',
+    data: {id:5, name: 'A'},
+    moreData: {objText: 'go'}
+} 
+
+function genericFunc<T,K>(a:T | K):number | undefined {
+    if (typeof a === 'number') {
+        return a + 5
+    }
+}
+
+//arrowGenericConflictWithReact fixed by ,
+const arrowGenericConflictWithReact = <T,>(arg: T):T => {
+    return arg
+}
+
 
 
 
