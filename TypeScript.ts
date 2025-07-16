@@ -315,6 +315,13 @@ function getProdGData ():APIResponseG<productG> {
     }
 }
 
+interface APIResponseGM<T, K> {
+    status: 'success' | 'error',
+    id: number,
+    data?: T,
+    moreData?: K
+}
+
 
 
 
