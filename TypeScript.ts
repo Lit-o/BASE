@@ -340,6 +340,28 @@ const arrowGenericConflictWithReact = <T,>(arg: T):T => {
     return arg
 }
 
+// EXTENDS
+interface neo {
+    wake: 'up',
+    neo: string
+}
+interface Matrix {
+    matrix: 'has you'
+    pill?: 'red' | 'blue'
+}
+
+function wakeUp<T extends {matrix:'has you'}>(arg: T) {
+    return arg
+}
+
+// Error, extends protect
+wakeUp({wake:'up', neo: 'Anderson'})
+
+const Matrix:Matrix = {
+    matrix: "has you",
+}
+
+wakeUp(Matrix)
 
 
 
