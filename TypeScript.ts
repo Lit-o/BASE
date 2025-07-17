@@ -364,6 +364,23 @@ const Matrix:Matrix = {
 wakeUp(Matrix)
 
 
+// GENERIC DEFAULT
+interface InterDefType<T = string> {
+    id: T
+}
+
+const intDefT:InterDefType = {
+    id: '1234'
+}
+
+const intDT: InterDefType<number> = {
+    id: 4
+}
+
+
+
+
+
 
 // strange
 type per = {age:number, name: string}
