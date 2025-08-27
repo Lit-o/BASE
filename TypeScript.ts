@@ -314,3 +314,96 @@ function getProdGData ():APIResponseG<productG> {
         data: {id: 4, prodName: 'product'}
     }
 }
+
+interface APIResponseGM<T, K> {
+    status: 'success' | 'error',
+    id: number,
+    data?: T,
+    moreData?: K
+}
+
+const ObjGM:APIResponseGM<userG, {objText: string}> = {
+    id:4,
+    status: 'success',
+    data: {id:5, name: 'A'},
+    moreData: {objText: 'go'}
+} 
+
+function genericFunc<T,K>(a:T | K):number | undefined {
+    if (typeof a === 'number') {
+        return a + 5
+    }
+}
+
+//arrowGenericConflictWithReact fixed by ,
+const arrowGenericConflictWithReact = <T,>(arg: T):T => {
+    return arg
+}
+
+// EXTENDS
+interface neo {
+    wake: 'up',
+    neo: string
+}
+interface Matrix {
+    matrix: 'has you'
+    pill?: 'red' | 'blue'
+}
+
+function wakeUp<T extends {matrix:'has you'}>(arg: T) {
+    return arg
+}
+
+// Error, extends protect
+wakeUp({wake:'up', neo: 'Anderson'})
+
+const Matrix:Matrix = {
+    matrix: "has you",
+}
+
+wakeUp(Matrix)
+
+
+// GENERIC DEFAULT
+interface InterDefType<T = string> {
+    id: T
+}
+
+const intDefT:InterDefType = {
+    id: '1234'
+}
+
+const intDT: InterDefType<number> = {
+    id: 4
+}
+
+
+
+
+
+
+// strange
+type per = {age:number, name: string}
+
+const logPer = (per:per) => {
+    console.log(per)
+}
+
+//id ERROR
+logPer({age: 15, name: 'Neo', id: 5})
+
+//id FINE
+const persone = {age: 15, name: 'Neo', id: 5}
+logPer(persone)
+// becouse structure language
+
+//id ERROR
+const persone2:per = {age: 15, name: 'Neo', id: 5}
+logPer(persone)
+
+const persone3:per = {
+    age: 15,
+    name: 'Neo', 
+    ...{id: 5}
+}
+logPer(persone)
