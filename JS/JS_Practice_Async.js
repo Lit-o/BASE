@@ -60,7 +60,7 @@ function makeProm (outerValue, delay = 1000) {
             }
         }, delay)
     })
-}
+} 
 
 function makeSecProm (data) {
     return new Promise((resolve, reject) => {
@@ -76,6 +76,12 @@ function makeSecProm (data) {
 }
 
 // const promReceiver = makeProm(outerValue, 6000)
+
+// run immediately when assignment to promiseExmpl variable
+let promiseExmpl = new Promise(function(resolve, reject) {
+    console.log('promise just instance')
+    setTimeout(() => {console.log('promise just instance resolve'); resolve("done!")}, 1000);
+});
 
 const logger = (data) => {
     console.log('logger run')
