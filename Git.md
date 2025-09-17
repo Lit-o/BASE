@@ -71,9 +71,42 @@ my custom tips, not from Git --help
 <br/>
 
 ## Git start<br/>
-`git init` - Create an empty Git repository or reinitialize an existing one<br/> 
-`git clone` - Clone a repository into a new directory<br/> 
+`git init myProject` - Create an empty Git repository or reinitialize an existing one<br/> 
+`git clone https://github.com/user/repo.git` - Clone a repository into a new directory<br/> 
 
+## Common<br/>
+`git status`
+
+`git add file.txt`
+`git add . `
+`git add *.js`
+
+`git commit -m 'add'`
+
+`git log`
+`git log --oneline`
+`git log --graph`
+
+## Branch<br/>
+`git branch new-feature`
+
+`git checkout new-feature` or `git switch new-feature`
+
+`git checkout -b new-feature`
+
+## Merge<br/>
+`git checkout main` or `git switch main`
+`git merge new-feature`
+del anymore unnecessary branch
+`git branch -d new-feature`
+
+## Remote<br/>
+`git remote add origin https://github.com/user/repo.git`
+`git push -u origin` - first push
+`git push` - other pushes
+
+`git pull origin main` - pull = fetch + Merge
+`git fetch` - only fetch without merge
 
 ## Last commit change<br/>
 `git commit --amend` - Last local commit change without making new commit<br/>
