@@ -155,6 +155,18 @@ switch HEAD to target commit
 `git branch -f targetBranch HEAD~3` - forcing link target branch to main previous commit
 
 
+## VIM tips
+Esc key -> "Normal mode". Can type : to enter "Command-line mode". A colon (:) will appear at the bottom of the screen and you can type commands. To execute a command, press the Enter.
+:help
+
+:x to write and quit; or ZZ; like :wq but writes only if modified (short :exit)
+:wq to write and quit
+:wq! to write and quit, attempting to force the write if the file lacks write permission
+:q to quit (short for :quit)
+:q!; ZQ; to quit without saving (short for :quit!)
+:qa to quit all (short for :quitall)
+:cq to quit, without saving, with a nonzero exit code to indicate failure (short for :cquit)
+
 
 ## Useful links
 [Git How To](https://githowto.com/ru)<br/>
