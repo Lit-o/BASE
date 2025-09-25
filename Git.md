@@ -67,21 +67,25 @@ my custom tips, not from Git --help
 `git config --global core.autocrlf true` - line end setting(Windows)<br/>
 `git config --global core.safecrlf warn` - line end setting<br/>
 
+`git config` without any scope option (--local, --global, or --system), it defaults to the --local scope
 <br/>
 <br/>
 
-## Git start<br/>
+## Git - two ways to create a repository<br/>
 `git init myProject` - Create an empty Git repository or reinitialize an existing one<br/> 
 `git clone https://github.com/user/repo.git` - Clone a repository into a new directory<br/> 
+`git clone https://github.com/user/repo.git new_Name_project` - Clone a repository into a new custom directory<br/> 
 
 ## Common<br/>
 `git status`
 
+indexed changes or to start tracking a new file (add version control)
 `git add file.txt`
 `git add . `
 `git add *.js`
 
 `git commit -m 'add'`
+`git commit -a -m 'Add new feature'` -a like `git add .`
 
 `git log`
 `git log --oneline`
@@ -89,10 +93,17 @@ my custom tips, not from Git --help
 
 ## Branch<br/>
 `git branch new-feature`
-
 `git checkout new-feature` or `git switch new-feature`
-
 `git checkout -b new-feature`
+### Rename local branch
+`git switch old-branch-name`
+`git branch -m new-branch-name`
+or
+`git branch -m old-branch-name new-branch-name`
+### Rename remote branch
+`git push origin -u new-branch-name`
+`git push origin --delete old-branch-name`
+
 
 ## Merge<br/>
 `git checkout main` or `git switch main`
@@ -112,6 +123,23 @@ del anymore unnecessary branch
 `git commit --amend` - Last local commit change without making new commit<br/>
 [ --no-edit] - option for current comment name stay as it was (when only add forgotten file needed)<br/>
 under hood git run `git reset`
+
+## Difference
+`git diff`
+`git diff --staged` show changes that have been indexed
+--staged or --cached the same
+
+## File delete
+`git rm`
+`git rm -f`
+`git rm --cached LOCAL_LOGS.md` - remove file from Git repository, but left at local machine dir
+
+## File rename or move to other dir
+`git mv file_from file_to`
+`git mv file_from new_dir/file_to` move from the current terminal directory to new path,
+`git mv inner_dir all_dir/inner_dir` can move dirs
+
+
 
 
 
