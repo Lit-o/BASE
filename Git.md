@@ -140,8 +140,19 @@ under hood git run `git reset`
 `git mv inner_dir all_dir/inner_dir` can move dirs
 
 
+## HEAD 
+by default HEAD linked to current branch
+but 
+`git checkout 754someHash552` 
+switch HEAD to target commit
 
+### switch HEAD by relative links
+^ - one commit higher
+~<num> - some commits higher
+`git checkout main^^` - 2 commitch higher than current main commit
+`git checkout HEAD^` + `git checkout HEAD^` + `git checkout HEAD^`  - steps to higher commits
 
+`git branch -f targetBranch HEAD~3` - forcing link target branch to main previous commit
 
 
 
