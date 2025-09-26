@@ -153,6 +153,14 @@ to except from current index accidentally added file
 use "git reset HEAD <file>..." to unstage)
 `git reset HEAD <file>...` - without changes inside local file, just unstage
 
+`git reset HEAD~1` - switch HEAD-link to previous commit like current commit doesn't exist
+good choise for local workflow, but doesn't work with remote workflow
+
+### Revert
+`git revert HEAD` like reset, but make new commit under the hood and work properly with remote workflow
+`git revert` add new opposite-mirror changes to current commit and it looks like cancellation of changes
+After revert `git push` needed
+
 
 
 
@@ -189,9 +197,6 @@ by default HEAD linked to current branch
 but 
 `git checkout 754someHash552` 
 switch HEAD to target commit
-
-
-
 
 ### switch HEAD by relative links
 ^ - one commit higher
