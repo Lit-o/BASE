@@ -164,7 +164,8 @@ After revert `git push` needed
 
 
 
-
+## Cherry-pick
+`git cherry-pick <Commit1> <Commit2> <...>` - add one or few commits to HEAD where i am now, like i would add those commits manually above my current commit(as if I were adding those commits manually above my current commit)
 
 ## Difference
 `git diff`
