@@ -1,5 +1,5 @@
-# Git<br/>
-<br/>
+# Git
+<br>
 
 ## Git \--help  
 ```
@@ -51,9 +51,10 @@ my custom tips, not from Git --help
 <br/>
 
 `git help push` - detailed info about `push` command
+<br/>
 
-<br/>
-<br/>
+
+
 
 ## Git config<br/>
 `git config --list` - info about user<br/>
@@ -71,10 +72,17 @@ my custom tips, not from Git --help
 <br/>
 <br/>
 
+
+
+
 ## Git - two ways to create a repository<br/>
 `git init myProject` - Create an empty Git repository or reinitialize an existing one<br/> 
 `git clone https://github.com/user/repo.git` - Clone a repository into a new directory<br/> 
 `git clone https://github.com/user/repo.git new_Name_project` - Clone a repository into a new custom directory<br/> 
+
+
+
+
 
 ## Common<br/>
 `git status`
@@ -91,6 +99,9 @@ indexed changes or to start tracking a new file (add version control)
 `git log --oneline`
 `git log --graph`
 
+
+
+
 ## Branch<br/>
 `git branch new-feature`
 `git checkout new-feature` or `git switch new-feature`
@@ -105,11 +116,17 @@ or
 `git push origin --delete old-branch-name`
 
 
+
+
 ## Merge<br/>
 `git checkout main` or `git switch main`
 `git merge new-feature`
 del anymore unnecessary branch
 `git branch -d new-feature`
+
+
+
+
 
 ## Remote<br/>
 `git remote add origin https://github.com/user/repo.git`
@@ -119,25 +136,52 @@ del anymore unnecessary branch
 `git pull origin main` - pull = fetch + Merge
 `git fetch` - only fetch without merge
 
-## Last commit change<br/>
-`git commit --amend` - Last local commit change without making new commit<br/>
+
+
+
+## Cancellation
+### Last commit change<br/>
+`git add .` add new changes to index
+`git commit --amend` - Last local commit change without making new commit. Like a merge new changes with previous commit. In fact behind the scene - replacing<br/>
 [ --no-edit] - option for current comment name stay as it was (when only add forgotten file needed)<br/>
 under hood git run `git reset`
+without new `git add .` --amend change only text about current commit
+
+### Reset
+after `git add .`
+to except from current index accidentally added file
+use "git reset HEAD <file>..." to unstage)
+`git reset HEAD <file>...` - without changes inside local file, just unstage
+
+
+
+
+
 
 ## Difference
 `git diff`
 `git diff --staged` show changes that have been indexed
 --staged or --cached the same
 
+
+
+
+
 ## File delete
 `git rm`
 `git rm -f`
 `git rm --cached LOCAL_LOGS.md` - remove file from Git repository, but left at local machine dir
 
+
+
+
+
 ## File rename or move to other dir
 `git mv file_from file_to`
 `git mv file_from new_dir/file_to` move from the current terminal directory to new path,
 `git mv inner_dir all_dir/inner_dir` can move dirs
+
+
 
 
 ## HEAD 
@@ -146,6 +190,9 @@ but
 `git checkout 754someHash552` 
 switch HEAD to target commit
 
+
+
+
 ### switch HEAD by relative links
 ^ - one commit higher
 ~<num> - some commits higher
@@ -153,6 +200,8 @@ switch HEAD to target commit
 `git checkout HEAD^` + `git checkout HEAD^` + `git checkout HEAD^`  - steps to higher commits
 
 `git branch -f targetBranch HEAD~3` - forcing link target branch to main previous commit
+
+
 
 
 ## VIM tips
