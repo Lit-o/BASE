@@ -162,6 +162,9 @@ After revert `git push` needed
 #### restore
 before `git add .`
 (use "git restore <file>..." to discard changes in working directory)
+ALTERNATIVE
+(use "git checkout -- <file>..." to discard changes in working directory)
+
 after  `git add .`
 (use "git restore --staged <file>..." to unstage)
 
