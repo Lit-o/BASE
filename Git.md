@@ -44,9 +44,6 @@ collaborate (see also: git help workflows)
    fetch     Download objects and refs from another repository
    pull      Fetch from and integrate with another repository or a local branch
    push      Update remote refs along with associated objects
-
-my custom tips, not from Git --help
-   config    [--local | --global] Git Settings 
 ``` 
 <br/>
 
@@ -160,6 +157,14 @@ good choise for local workflow, but doesn't work with remote workflow
 `git revert HEAD` like reset, but make new commit under the hood and work properly with remote workflow
 `git revert` add new opposite-mirror changes to current commit and it looks like cancellation of changes
 After revert `git push` needed
+
+### New commands for cancellation
+#### restore
+before `git add .`
+(use "git restore <file>..." to discard changes in working directory)
+after  `git add .`
+(use "git restore --staged <file>..." to unstage)
+
 
 
 
