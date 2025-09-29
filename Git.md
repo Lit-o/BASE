@@ -173,7 +173,17 @@ after  `git add .`
 
 
 ## Cherry-pick
-`git cherry-pick <Commit1> <Commit2> <...>` - add one or few commits to HEAD where i am now, like i would add those commits manually above my current commit(as if I were adding those commits manually above my current commit)
+`git cherry-pick <Commit1> <Commit2> <...>` - add one or few commits to HEAD where i am now, like i would add those commits manually above my current commit(as if I were adding those commits manually above my current commit) !caution! this commit must not to be Parent of this HEAD
+
+trick
+`git cherry-pick Some`
+`git commit --amend`
+`git cherry-pick SomeOther`
+
+## Git rebase
+`git rebase -i HEAD~4`
+
+
 
 ## Difference
 `git diff`
