@@ -1,53 +1,122 @@
-const menu = [
+const menu:MenuItem[] = [
     {name: 'Margherita', price: 5},
     {name: 'Pepperoni', price: 6},
     {name: 'Hawaiian', price: 7},
     {name: 'Cheese', price: 8}
 ]
 
-let cashInRegister = 0
+// Defining custom type
+type MenuItem = {
+    name: string
+    price: number
+}
 
-const orderQueue:any[] = []
+// Defining basic type
+let cashInRegister: number = 0
+
+// Defining array type
+
+interface OrderPizza {
+    id: number
+    pizza: MenuItem
+    // | - is union
+    status: 'ordered' | 'completed'
+    // status: string
+
+    // ? - is optional
+    rating?: number
+}
+
+const orderQueue:OrderPizza[] = []
 let nextOrderId = 1
 
 
-function addNewPizza(pizzaObj:any) {
+function addNewPizzaToMenu(pizzaObj:MenuItem) {
     menu.push(pizzaObj)
 }
 
 
-function placeOrder(pizzaName:string) {
+function placeOrder(pizzaName:string):OrderPizza {
     const currentPizza = menu.find(el => el.name === pizzaName)
     if (!currentPizza) {
         console.error(`${pizzaName} does not exist in the menu`)
-        return
+        throw new Error(`${pizzaName} does not exist in the menu`)
     }
 
-    cashInRegister += currentPizza?.price
+    cashInRegister += currentPizza.price
 
-    const newOrder = {pizza: currentPizza, status: 'ordered', id: nextOrderId++}
+    // If remove OrderPizza explicit defining type then error appear
+    const newOrder:OrderPizza = {pizza: currentPizza, status: "ordered", id: nextOrderId++}
     orderQueue.push(newOrder)
-    return newOrder
 
+    return newOrder
 }
 
-
-function completeOrder (orderId:number) {
+// if i return empty then undefined need to be defining in output type,
+// or instead of return i can use throw new Error(`some discription`) 
+function completeOrder (orderId:number): OrderPizza | undefined {
     const targetOrder = orderQueue.find(el => el.id === orderId)
+    if (!targetOrder) {
+        console.log('This ID doesn\'t exist! Check out and try another ID')
+        return
+    }
     targetOrder.status = 'completed'
     return targetOrder
 }
 
 
-addNewPizza({name: 'BBQ', cost: 8})
-addNewPizza({name: 'BBQ + Bacon', cost: 12})
-addNewPizza({name: 'Spicy Sausage', cost: 10})
+addNewPizzaToMenu({name: 'BBQ', price: 8})
+addNewPizzaToMenu({name: 'BBQ + Bacon', price: 12})
+addNewPizzaToMenu({name: 'Spicy Sausage', price: 10})
 
 placeOrder('BBQ')
 placeOrder('BBQ + Bacon')
 
 completeOrder(2)
 
-console.log('Menu: ', menu)
-console.log('cashInRegister: ', cashInRegister)
-console.log('orderQueue: ', orderQueue)
+// console.log('Menu: ', menu)
+// console.log('cashInRegister: ', cashInRegister)
+// console.log('orderQueue: ', orderQueue)
+
+
+// type Narrowing
+function narrowingExampler (inputData: number | string): void {
+    if (typeof inputData === 'number') {
+        console.log(inputData + 1) 
+    } else {
+        console.log(inputData.toLowerCase())
+    }
+}
+
+
+
+
+
+// LIST OF TOPICS
+// Basic, literal and custom types
+// Optional properties
+// Unions
+// Type Narrowing
+// Utility Types
+// Generics
+
+
+
+
+// My own practice
+function genericFunctionPractice<T>(inputData: T): Array<T> {
+    console.log(inputData)
+    console.log(typeof inputData)
+    return [inputData]
+}
+
+genericFunctionPractice(5)
+genericFunctionPractice(false)
+genericFunctionPractice<string>('string data')
+
+// Error when explicit-<Generic>-type-parameter conflicted 
+// with missmatch current (argument) type when try run and execute - <number>('string er')
+// genericFunctionPractice<number>('string er')
+
+console.log(genericFunctionPractice(5))
+
