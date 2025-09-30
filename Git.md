@@ -50,6 +50,17 @@ collaborate (see also: git help workflows)
 `git help push` - detailed info about `push` command
 <br/>
 
+Creating aliases for commands: This allows you to define shorter, custom commands for frequently used Git operations.
+`git config --global alias.s status`
+`git config --global alias.aa 'add .'`
+`git config --global alias.a add`
+`git config --global alias.sw switch`
+`git config --global alias.ch checkout`
+`git config --global alias.cm 'commit -m'`
+
+to view all configured aliases
+`git config --get-regexp '^alias\.'`
+
 
 
 
@@ -129,6 +140,8 @@ del anymore unnecessary branch
 `git remote add origin https://github.com/user/repo.git`
 `git push -u origin` - first push
 `git push` - other pushes
+
+`git remote -v` - to see addresses
 
 `git pull origin main` - pull = fetch + Merge
 `git fetch` - only fetch without merge
