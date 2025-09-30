@@ -57,6 +57,8 @@ Creating aliases for commands: This allows you to define shorter, custom command
 `git config --global alias.sw switch`
 `git config --global alias.ch checkout`
 `git config --global alias.cm 'commit -m'`
+`git config --global alias.p 'push'`
+`git config --global alias.pl 'pull'`
 
 to view all configured aliases
 `git config --get-regexp '^alias\.'`
