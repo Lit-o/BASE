@@ -36,11 +36,11 @@ function addNewPizzaToMenu(pizzaObj:MenuItem) {
 }
 
 
-function placeOrder(pizzaName:string) {
+function placeOrder(pizzaName:string):OrderPizza {
     const currentPizza = menu.find(el => el.name === pizzaName)
     if (!currentPizza) {
         console.error(`${pizzaName} does not exist in the menu`)
-        return
+        throw new Error(`${pizzaName} does not exist in the menu`)
     }
 
     cashInRegister += currentPizza.price
@@ -52,8 +52,9 @@ function placeOrder(pizzaName:string) {
     return newOrder
 }
 
-
-function completeOrder (orderId:number) {
+// if i return empty then undefined need to be defining in output type,
+// or instead of return i can use throw new Error(`some discription`) 
+function completeOrder (orderId:number): OrderPizza | undefined {
     const targetOrder = orderQueue.find(el => el.id === orderId)
     if (!targetOrder) {
         console.log('This ID doesn\'t exist! Check out and try another ID')
@@ -76,6 +77,16 @@ completeOrder(2)
 // console.log('Menu: ', menu)
 // console.log('cashInRegister: ', cashInRegister)
 // console.log('orderQueue: ', orderQueue)
+
+
+// type Narrowing
+function narrowingExampler (inputData: number | string): void {
+    if (typeof inputData === 'number') {
+        console.log(inputData + 1) 
+    } else {
+        console.log(inputData.toLowerCase())
+    }
+}
 
 
 
