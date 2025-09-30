@@ -195,8 +195,26 @@ trick
 `git commit --amend`
 `git cherry-pick SomeOther`
 
+
+
+
+
 ## Git rebase
 `git rebase -i HEAD~4`
+
+
+
+## Git tag
+`git tag myConsTag 823some23hash`
+`git tag myTagToCurrentHead` withoud second argument tag linked to current HEAD
+
+`git checkout someTag`
+can't doing commit into tag
+
+`git describe <ref>` - show delta, without <ref> by default HEAD
+output
+<tag>_<numCommits>_g<hash>
+
 
 
 
