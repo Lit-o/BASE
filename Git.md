@@ -145,8 +145,24 @@ del anymore unnecessary branch
 
 `git remote -v` - to see addresses
 
+`git remote show <remote>` - info about remote repository
+
 `git pull origin main` - pull = fetch + Merge
 `git fetch` - only fetch without merge
+
+`git push origin master` - to push changes to remote repository
+tip 1:
+`push` work only if i am cloned from a server to which i'm have write access
+
+tip 2:
+if me and someone else clone at the same time and they push upstream
+and them i am push upstream, my push will rightly be rejected.
+Need fetch their work, incorporate it into my repo and then try to push again
+
+`git remote rename` - rename remote branch
+
+`git remote rm` - remove(delete) remote branch
+`git remote remove testBranch`
 
 
 
