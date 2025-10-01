@@ -120,3 +120,59 @@ genericFunctionPractice<string>('string data')
 
 console.log(genericFunctionPractice(5))
 
+
+// UTILITY TYPES
+interface UserDefault {
+    id: number
+    name: string
+    age: number,
+    secondName: string 
+}
+
+// PARTIAL Make all params from type is optional a?: b?: c?: ...
+type UserAnonymous = Partial<UserDefault>
+
+const FirstAnonUser: UserAnonymous = {
+    age: 25,
+}
+
+// OMIT make new type and Omit parameters that specified
+type NumberlessUser = Omit<UserDefault, 'id' | 'age'>
+
+const secondAnonNumberlessUser: NumberlessUser = {
+    name: 'John',
+    secondName: 'Doe'
+}
+
+
+
+// Super Type 
+// & or extends - can make super type
+type BaseType = {
+    name: string
+}
+type SuperBaseType = BaseType & {age: number}
+interface ISuperBaseType extends BaseType {
+    id: number
+}
+const baseText: SuperBaseType = {
+    age: 32,
+    name: 'John'
+}
+
+
+
+// // React and React Native typing
+// interface LoginProps {
+//     setIsSignedIn: React.Dispatch<SetStateAction<boolean>>
+//     // Practice with property typing 
+//     // ReactNode include string, number, boolean, JSX.Element etc.
+//     children?: React.ReactNode
+//     childrens?: React.JSX.Element[]
+//     someOptionalProp?: any 
+//     imageProps?: React.ComponentPropsWithoutRef<"img"> & string & {name: string}
+//     padding?: [number, number, number, number]
+//     style?: React.CSSProperties
+//     onClick?: () => void
+//     onDblClick?: (data: string) => string
+// }
