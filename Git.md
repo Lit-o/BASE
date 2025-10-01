@@ -109,6 +109,10 @@ indexed changes or to start tracking a new file (add version control)
 `git log`
 `git log --oneline`
 `git log --graph`
+git log doesn’t show all the branches all the time
+By default, git log will only show commit history below the branch that checked out.
+To show commit history for the desired branch need to explicitly specify it: git
+log <branch-name>. To show all of the branches, add --all to git log command.
 
 
 
