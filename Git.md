@@ -59,6 +59,7 @@ Creating aliases for commands: This allows you to define shorter, custom command
 `git config --global alias.cm 'commit -m'`
 `git config --global alias.p 'push'`
 `git config --global alias.pl 'pull'`
+`git config --global alias.last 'log -1 HEAD'`
 
 to view all configured aliases
 `git config --get-regexp '^alias\.'`
@@ -108,6 +109,10 @@ indexed changes or to start tracking a new file (add version control)
 `git log`
 `git log --oneline`
 `git log --graph`
+git log doesn’t show all the branches all the time
+By default, git log will only show commit history below the branch that checked out.
+To show commit history for the desired branch need to explicitly specify it: git
+log <branch-name>. To show all of the branches, add --all to git log command.
 
 
 
@@ -145,8 +150,24 @@ del anymore unnecessary branch
 
 `git remote -v` - to see addresses
 
+`git remote show <remote>` - info about remote repository
+
 `git pull origin main` - pull = fetch + Merge
 `git fetch` - only fetch without merge
+
+`git push origin master` - to push changes to remote repository
+tip 1:
+`push` work only if i am cloned from a server to which i'm have write access
+
+tip 2:
+if me and someone else clone at the same time and they push upstream
+and them i am push upstream, my push will rightly be rejected.
+Need fetch their work, incorporate it into my repo and then try to push again
+
+`git remote rename` - rename remote branch
+
+`git remote rm` - remove(delete) remote branch
+`git remote remove testBranch`
 
 
 
@@ -205,6 +226,9 @@ trick
 
 
 ## Git tag
+`git tag` - show list of tags
+`git tag -l "v1.8.5*"` - can also search for tags that match a particular pattern
+
 `git tag myConsTag 823some23hash`
 `git tag myTagToCurrentHead` withoud second argument tag linked to current HEAD
 
@@ -257,6 +281,11 @@ switch HEAD to target commit
 `git checkout HEAD^` + `git checkout HEAD^` + `git checkout HEAD^`  - steps to higher commits
 
 `git branch -f targetBranch HEAD~3` - forcing link target branch to main previous commit
+
+detached HEAD
+In “detached HEAD” state, if you make changes and then create a commit, the tag will stay the same,
+but your new commit won’t belong to any branch and will be unreachable, except by the exact
+commit hash
 
 
 
