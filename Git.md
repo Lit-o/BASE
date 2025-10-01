@@ -221,6 +221,9 @@ trick
 
 
 ## Git tag
+`git tag` - show list of tags
+`git tag -l "v1.8.5*"` - can also search for tags that match a particular pattern
+
 `git tag myConsTag 823some23hash`
 `git tag myTagToCurrentHead` withoud second argument tag linked to current HEAD
 
@@ -273,6 +276,11 @@ switch HEAD to target commit
 `git checkout HEAD^` + `git checkout HEAD^` + `git checkout HEAD^`  - steps to higher commits
 
 `git branch -f targetBranch HEAD~3` - forcing link target branch to main previous commit
+
+detached HEAD
+In “detached HEAD” state, if you make changes and then create a commit, the tag will stay the same,
+but your new commit won’t belong to any branch and will be unreachable, except by the exact
+commit hash
 
 
 
