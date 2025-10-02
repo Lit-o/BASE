@@ -114,6 +114,8 @@ By default, git log will only show commit history below the branch that checked 
 To show commit history for the desired branch need to explicitly specify it: git
 log <branch-name>. To show all of the branches, add --all to git log command.
 
+`git log --oneline --decorate` shows where the branch pointers are pointing
+
 
 
 
