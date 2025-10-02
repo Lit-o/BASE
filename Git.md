@@ -50,6 +50,10 @@ collaborate (see also: git help workflows)
 `git help push` - detailed info about `push` command
 <br/>
 
+
+
+
+
 Creating aliases for commands: This allows you to define shorter, custom commands for frequently used Git operations.
 `git config --global alias.s status`
 `git config --global alias.aa 'add .'`
@@ -310,6 +314,8 @@ Esc key -> "Normal mode". Can type : to enter "Command-line mode". A colon (:) w
 :q!; ZQ; to quit without saving (short for :quit!)
 :qa to quit all (short for :quitall)
 :cq to quit, without saving, with a nonzero exit code to indicate failure (short for :cquit)
+
+
 
 
 ## Useful links
