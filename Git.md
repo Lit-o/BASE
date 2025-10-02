@@ -114,6 +114,8 @@ By default, git log will only show commit history below the branch that checked 
 To show commit history for the desired branch need to explicitly specify it: git
 log <branch-name>. To show all of the branches, add --all to git log command.
 
+`git log --oneline --decorate` shows where the branch pointers are pointing
+
 
 
 
@@ -121,14 +123,20 @@ log <branch-name>. To show all of the branches, add --all to git log command.
 `git branch new-feature`
 `git checkout new-feature` or `git switch new-feature`
 `git checkout -b new-feature`
+
 ### Rename local branch
 `git switch old-branch-name`
 `git branch -m new-branch-name`
 or
 `git branch -m old-branch-name new-branch-name`
+
 ### Rename remote branch
 `git push origin -u new-branch-name`
 `git push origin --delete old-branch-name`
+
+### Switch
+`git switch -c new-branch` - Create a new branch and switch to it
+`git switch -` - Return to previously checked out branch
 
 
 
