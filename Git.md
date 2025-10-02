@@ -60,6 +60,7 @@ Creating aliases for commands: This allows you to define shorter, custom command
 `git config --global alias.p 'push'`
 `git config --global alias.pl 'pull'`
 `git config --global alias.last 'log -1 HEAD'`
+`git config --global alias.acm 'commit -a -m'`
 
 to view all configured aliases
 `git config --get-regexp '^alias\.'`
