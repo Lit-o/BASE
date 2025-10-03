@@ -147,6 +147,8 @@ const secondAnonNumberlessUser: NumberlessUser = {
 
 
 // Super Type 
+// & - intersecting
+// extends - extending
 // & or extends - can make super type
 type BaseType = {
     name: string
