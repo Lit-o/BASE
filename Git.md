@@ -201,6 +201,9 @@ Need fetch their work, incorporate it into my repo and then try to push again
 `git remote rm` - remove(delete) remote branch
 `git remote remove testBranch`
 
+`git ls-remote origin` - a full list of remote references explicitly 
+`git remote show <remote>` - for remote branches as well as more information
+
 
 
 
