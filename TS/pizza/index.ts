@@ -104,6 +104,11 @@ function narrowingExampler (inputData: number | string): void {
 
 
 // My own practice
+//<T,> , needed becouse JSX work with <Components> and , in <T,> shows that is it not JSX syntax, but TS syntax
+const genericFunctionPracticeArrow = <T,>(input: T): T[] => {
+    return [input]
+}
+
 function genericFunctionPractice<T>(inputData: T): Array<T> {
     console.log(inputData)
     console.log(typeof inputData)
@@ -119,6 +124,33 @@ genericFunctionPractice<string>('string data')
 // genericFunctionPractice<number>('string er')
 
 console.log(genericFunctionPractice(5))
+
+
+type UserLog<T> = {
+    name: string,
+    history: T[]
+}
+
+const UserLog1: UserLog<number> = {
+    name: 'Neo',
+    history: [1,2,3]
+}
+const UserLog2: UserLog<string> = {
+    name: 'Neo',
+    history: ['one', 'two', 'three']
+}
+
+function addId<T>(user: UserLog<T>): UserLog<T> & {id: number} {
+    return {
+        ...user,
+        id: 4
+    }
+}
+
+const withIdUser1 = addId(UserLog1)
+console.log(withIdUser1)
+
+
 
 
 // UTILITY TYPES
@@ -150,6 +182,7 @@ const secondAnonNumberlessUser: NumberlessUser = {
 // & - intersecting
 // extends - extending
 // & or extends - can make super type
+// as - assertion
 type BaseType = {
     name: string
 }
@@ -178,3 +211,22 @@ const baseText: SuperBaseType = {
 //     onClick?: () => void
 //     onDblClick?: (data: string) => string
 // }
+
+
+
+// const [user, setUser] = useState<User | null>(null)
+// console.log(user?.name)
+
+
+
+// type LocalData = 'on' | 'off'
+// useEffect(()=>{
+//     const previousData = localStorage.getItem('Data') as LocalData
+//     console.log(previousData)
+// },[])
+
+const constArray = [
+    'one',
+    'two',
+    'three'
+] as const
