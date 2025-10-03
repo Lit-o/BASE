@@ -139,6 +139,25 @@ or
 `git push origin -u new-branch-name`
 `git push origin --delete old-branch-name`
 
+### Last commit on each branch
+`git branch -v`
+
+### See merged
+`git switch main`
+`git branch --merged` (--no-merged)
+! Tip
+Branches on this list without the * in front of them are generally fine 
+to delete with `git branch -d` you’ve already incorporated their
+work into another branch, so you’re not going to lose anything
+
+`git branch --no-merged`
+This shows other branch. Because it contains work that isn’t merged in yet, trying to delete it
+with git branch -d will fail:
+`git branch -d someUnmergedBranch`
+error: The branch 'someUnmergedBranch' is not fully merged.
+If you are sure you want to delete it, run `'git branch -D testing'`
+
+
 ### Switch
 `git switch -c new-branch` - Create a new branch and switch to it
 `git switch -` - Return to previously checked out branch
