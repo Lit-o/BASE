@@ -211,6 +211,8 @@ Need fetch their work, incorporate it into my repo and then try to push again
 ### Last commit change<br/>
 `git add .` add new changes to index
 `git commit --amend` - Last local commit change without making new commit. Like a merge new changes with previous commit. In fact behind the scene - replacing<br/>
+`git commit --amend --no-edit` - to only add . something
+`git commit --amend -m` - to only rewrite Commit name
 [ --no-edit] - option for current comment name stay as it was (when only add forgotten file needed)<br/>
 under hood git run `git reset`
 without new `git add .` --amend change only text about current commit
