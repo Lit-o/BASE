@@ -141,6 +141,8 @@ or
 
 ### Last commit on each branch
 `git branch -v`
+`git branch -vv` more info about branches
+`git fetch --all; git branch -vv` - totally actual info
 
 ### See merged
 `git switch main`
