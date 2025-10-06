@@ -171,7 +171,7 @@ If you are sure you want to delete it, run `'git branch -D testing'`
 del anymore unnecessary branch
 `git branch -d new-feature`
 
-
+test
 
 
 
@@ -203,6 +203,14 @@ Need fetch their work, incorporate it into my repo and then try to push again
 
 `git ls-remote origin` - a full list of remote references explicitly 
 `git remote show <remote>` - for remote branches as well as more information
+
+Push without upstream tip
+// git push
+// fatal: The current branch test has no upstream branch.
+// To push the current branch and set the remote as upstream, use
+`git push --set-upstream origin test`
+// To have this happen automatically for branches without a tracking
+// upstream, see 'push.autoSetupRemote' in 'git help config'.
 
 
 
