@@ -141,6 +141,8 @@ or
 
 ### Last commit on each branch
 `git branch -v`
+`git branch -vv` more info about branches
+`git fetch --all; git branch -vv` - totally actual info
 
 ### See merged
 `git switch main`
@@ -171,7 +173,7 @@ If you are sure you want to delete it, run `'git branch -D testing'`
 del anymore unnecessary branch
 `git branch -d new-feature`
 
-
+test
 
 
 
@@ -204,6 +206,20 @@ Need fetch their work, incorporate it into my repo and then try to push again
 `git ls-remote origin` - a full list of remote references explicitly 
 `git remote show <remote>` - for remote branches as well as more information
 
+Push without upstream tip
+// git push
+// fatal: The current branch test has no upstream branch.
+// To push the current branch and set the remote as upstream, use
+`git push --set-upstream origin test`
+// To have this happen automatically for branches without a tracking
+// upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+Make local branch and push it to server
+`git checkout -b featureA`
+` git push -u origin featureA`
+
+Push local branch to target remote branch
+`git push -u origin featureB:featureBee`
 
 
 
