@@ -218,6 +218,9 @@ Make local branch and push it to server
 `git checkout -b featureA`
 ` git push -u origin featureA`
 
+Push local branch to target remote branch
+`git push -u origin featureB:featureBee`
+
 
 
 ## Cancellation
