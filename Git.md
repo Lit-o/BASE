@@ -214,6 +214,9 @@ Push without upstream tip
 // To have this happen automatically for branches without a tracking
 // upstream, see 'push.autoSetupRemote' in 'git help config'.
 
+Make local branch and push it to server
+`git checkout -b featureA`
+` git push -u origin featureA`
 
 
 
