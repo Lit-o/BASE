@@ -179,7 +179,7 @@ test
 
 ## Remote<br/>
 `git remote add origin https://github.com/user/repo.git`
-`git push -u origin` - first push
+`git push -u origin main` - first push
 `git push` - other pushes
 
 `git remote -v` - to see addresses
