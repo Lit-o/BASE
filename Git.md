@@ -341,6 +341,9 @@ but your new commit won’t belong to any branch and will be unreachable, except
 commit hash
 
 
+## Patterns
+before push -> commit + pull + commit + push
+
 
 
 ## VIM tips
