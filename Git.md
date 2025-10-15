@@ -341,6 +341,13 @@ but your new commit won’t belong to any branch and will be unreachable, except
 commit hash
 
 
+## Stash
+`git stash`
+`git pop`
+`git stash pop`
+
+
+
 ## Patterns
 before push -> commit + pull + commit + push
 
